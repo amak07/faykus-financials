@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "yarn graphql:generate && next dev",
-    "build": "next build",
+    "build": "yarn graphql:prod:generate && next build",
     "start": "next start",
     "lint": "next lint",
-    "graphql:generate": "graphql-codegen --config codegen.yml",
-    "graphql:prod:generate": "graphql-codegen --config codegen-prod.yml"
+    "graphql:generate": "graphql-codegen --config codegen.development.yml",
+    "graphql:prod:generate": "graphql-codegen --config codegen.production.yml"
   },
   "dependencies": {
     "graphql": "^15.5.1",

@@ -1,0 +1,10 @@
+schema: https://afternoon-hollows-79281.herokuapp.com/graphql
+documents: "graphql/**/*.graphql"
+generates:
+  graphql/codegen/index.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-query
+    config:
+      fetcher: graphql-request
