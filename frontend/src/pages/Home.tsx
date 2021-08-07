@@ -1,18 +1,36 @@
-import React from "react";
-import useFetch from "../hooks/useFetch";
 import { Link } from "react-router-dom";
+import { useQuery } from "react-query";
+import gql from "graphql-tag";
+import { request } from "graphql-request";
+
+const GET_REVIEWS = gql`
+  query {
+    reviews {
+      id
+      title
+      body
+      rating
+    }
+  }
+`;
+
+const useGQLQuery = (key: string, query: any, variables?: [], config?: {}) => {
+  const endpoint = "http://localhost:1337/graphql";
+  const fetchData = async () => request(endpoint, query, variables);
+  return useQuery(key, fetchData, config);
+};
 
 export default function Home() {
-  const { loading, error, data } = useFetch<
-    { id: number; rating: number; title: string; body: string }[]
-  >("http://localhost:1337/reviews");
+  const { data, isLoading, error } = useGQLQuery("reviews", GET_REVIEWS);
 
-  if (loading) return <p>Loading...</p>;
+  console.log("data", data);
+
+  if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
   return (
     <div>
-      {data?.map(
+      {data.reviews?.map(
         (review: {
           id: number;
           rating: number;
