@@ -16,8 +16,9 @@
     "paths": {
       "@components/*": ["./components/*"],
       "@lib/*": ["./lib/*"],
-      "@graphql/*": ["./graphql/*"]
-    }
+      "@graphql/*": ["./graphql/codegen"]
+    },
+    "baseUrl": "."
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
