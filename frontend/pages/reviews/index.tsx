@@ -1,8 +1,5 @@
-import graphqlRequestClient from "../../lib/gql-client";
-import {
-  GetReviewsQuery,
-  useGetReviewsQuery,
-} from "../../graphql/generated/graphql";
+import { GetReviewsQuery, useGetReviewsQuery } from "@graphql/codegen";
+import graphqlRequestClient from "@lib/gql-client";
 
 export default function Reviews() {
   const { isLoading, error, data } = useGetReviewsQuery<GetReviewsQuery, Error>(
