@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "yarn graphql:generate && next dev",
     "build": "yarn graphql:prod:generate && next build",
-    "start": "next start",
+    "serve:prod": "yarn build && next start -p 4000",
     "lint": "next lint",
     "graphql:generate": "graphql-codegen --config codegen.development.yml",
     "graphql:prod:generate": "graphql-codegen --config codegen.production.yml"
