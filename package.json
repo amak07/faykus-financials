@@ -1,9 +1,0 @@
-{
-  "name": "faykus-financials",
-  "description": "root package.json file used for heroku deployment!",
-  "scripts": {
-    "heroku-prebuild": "cd backend && npm install && npm build",
-    "heroku-postbuild": "echo This runs after Heroku installs dependencies, but before Heroku prunes and caches dependencies.",
-    "heroku-cleanup": "echo This runs after Heroku prunes and caches dependencies."
-  }
-}
