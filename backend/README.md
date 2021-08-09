@@ -81,5 +81,5 @@ By default, new changes to Strapi configuration made in development will be push
 
 1. During local Strapi development, a new API (and therefore a new Content Type) is created.
 2. API is tested locally with **Frontend** and is deemed ready for production.
-3. Any changes to **Backend** `config` files such as `plugins` or `database` will need to be deployed manually (or automatically when these `config` changes are checked into `main` branch).
+3. Any changes to **Backend** `config` files such as `config/env/production/plugins.js` or `config/env/production/database.js` will need to be deployed manually (or automatically when these `config` changes are checked into `main` branch).
 4. However, the actual API (or Content Type) configuration that was created during local Strapi development will need to be duplicated through the production Strapi admin panel that is hosted on Heroku. This is because the production database will never be synced with local development.
