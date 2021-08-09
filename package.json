@@ -1,0 +1,7 @@
+{
+  "name": "faykus-financials",
+  "description": "root package.json file used for heroku deployment!",
+  "scripts": {
+    "heroku-prebuild": "cd backend"
+  }
+}
