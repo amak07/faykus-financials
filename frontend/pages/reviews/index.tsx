@@ -1,5 +1,9 @@
 import { GetReviewsQuery, useGetReviewsQuery } from "@graphql/codegen";
 import graphqlRequestClient from "@lib/gql-client";
+import { GetStaticProps } from "next";
+import { QueryClient } from "react-query";
+import { dehydrate } from "react-query/hydration";
+import { DehydratedState } from "react-query/types/hydration";
 
 export default function Reviews() {
   const { isLoading, error, data } = useGetReviewsQuery<GetReviewsQuery, Error>(
@@ -23,3 +27,18 @@ export default function Reviews() {
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps = async (): Promise<{
+  props: { dehydratedState: DehydratedState };
+}> => {
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery(useGetReviewsQuery.getKey(), () =>
+    useGetReviewsQuery.fetcher(graphqlRequestClient)
+  );
+
+  return {
+    props: {
+      dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
+    },
+  };
+};

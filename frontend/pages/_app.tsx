@@ -2,20 +2,27 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 5 * 1000, // 5 sec
-    },
-  },
-});
+import { Hydrate } from "react-query/hydration";
+import { useState } from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            staleTime: 20 * 1000,
+          },
+        },
+      })
+  );
+
   return (
     <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools initialIsOpen={false} />
-      <Component {...pageProps} />
+      <Hydrate state={pageProps.dehydratedState}>
+        <ReactQueryDevtools initialIsOpen={false} />
+        <Component {...pageProps} />
+      </Hydrate>
     </QueryClientProvider>
   );
 }

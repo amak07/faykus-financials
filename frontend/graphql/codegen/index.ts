@@ -37,6 +37,84 @@ export type AdminUser = {
   lastname: Scalars['String'];
 };
 
+export type Category = {
+  __typename?: 'Category';
+  id: Scalars['ID'];
+  created_at: Scalars['DateTime'];
+  updated_at: Scalars['DateTime'];
+  name: Scalars['String'];
+  published_at?: Maybe<Scalars['DateTime']>;
+  reviews?: Maybe<Array<Maybe<Review>>>;
+};
+
+
+export type CategoryReviewsArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+};
+
+export type CategoryAggregator = {
+  __typename?: 'CategoryAggregator';
+  count?: Maybe<Scalars['Int']>;
+  totalCount?: Maybe<Scalars['Int']>;
+};
+
+export type CategoryConnection = {
+  __typename?: 'CategoryConnection';
+  values?: Maybe<Array<Maybe<Category>>>;
+  groupBy?: Maybe<CategoryGroupBy>;
+  aggregate?: Maybe<CategoryAggregator>;
+};
+
+export type CategoryConnectionCreated_At = {
+  __typename?: 'CategoryConnectionCreated_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<CategoryConnection>;
+};
+
+export type CategoryConnectionId = {
+  __typename?: 'CategoryConnectionId';
+  key?: Maybe<Scalars['ID']>;
+  connection?: Maybe<CategoryConnection>;
+};
+
+export type CategoryConnectionName = {
+  __typename?: 'CategoryConnectionName';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<CategoryConnection>;
+};
+
+export type CategoryConnectionPublished_At = {
+  __typename?: 'CategoryConnectionPublished_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<CategoryConnection>;
+};
+
+export type CategoryConnectionUpdated_At = {
+  __typename?: 'CategoryConnectionUpdated_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<CategoryConnection>;
+};
+
+export type CategoryGroupBy = {
+  __typename?: 'CategoryGroupBy';
+  id?: Maybe<Array<Maybe<CategoryConnectionId>>>;
+  created_at?: Maybe<Array<Maybe<CategoryConnectionCreated_At>>>;
+  updated_at?: Maybe<Array<Maybe<CategoryConnectionUpdated_At>>>;
+  name?: Maybe<Array<Maybe<CategoryConnectionName>>>;
+  published_at?: Maybe<Array<Maybe<CategoryConnectionPublished_At>>>;
+};
+
+export type CategoryInput = {
+  name: Scalars['String'];
+  reviews?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
 
 
 export type FileInfoInput = {
@@ -87,10 +165,13 @@ export type LocaleInput = {
 };
 
 
-export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Review | ReviewConnection | ReviewAggregator | ReviewAggregatorSum | ReviewAggregatorAvg | ReviewAggregatorMin | ReviewAggregatorMax | ReviewGroupBy | ReviewConnectionId | ReviewConnectionCreated_At | ReviewConnectionUpdated_At | ReviewConnectionTitle | ReviewConnectionRating | ReviewConnectionBody | ReviewConnectionPublished_At | CreateReviewPayload | UpdateReviewPayload | DeleteReviewPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_At | UploadFileConnectionUpdated_At | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | DeleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | CreateUserPayload | UpdateUserPayload | DeleteUserPayload;
+export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Category | CategoryConnection | CategoryAggregator | CategoryGroupBy | CategoryConnectionId | CategoryConnectionCreated_At | CategoryConnectionUpdated_At | CategoryConnectionName | CategoryConnectionPublished_At | CreateCategoryPayload | UpdateCategoryPayload | DeleteCategoryPayload | Review | ReviewConnection | ReviewAggregator | ReviewAggregatorSum | ReviewAggregatorAvg | ReviewAggregatorMin | ReviewAggregatorMax | ReviewGroupBy | ReviewConnectionId | ReviewConnectionCreated_At | ReviewConnectionUpdated_At | ReviewConnectionTitle | ReviewConnectionRating | ReviewConnectionBody | ReviewConnectionPublished_At | CreateReviewPayload | UpdateReviewPayload | DeleteReviewPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_At | UploadFileConnectionUpdated_At | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | DeleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | CreateUserPayload | UpdateUserPayload | DeleteUserPayload;
 
 export type Mutation = {
   __typename?: 'Mutation';
+  createCategory?: Maybe<CreateCategoryPayload>;
+  updateCategory?: Maybe<UpdateCategoryPayload>;
+  deleteCategory?: Maybe<DeleteCategoryPayload>;
   createReview?: Maybe<CreateReviewPayload>;
   updateReview?: Maybe<UpdateReviewPayload>;
   deleteReview?: Maybe<DeleteReviewPayload>;
@@ -116,6 +197,21 @@ export type Mutation = {
   forgotPassword?: Maybe<UserPermissionsPasswordPayload>;
   resetPassword?: Maybe<UsersPermissionsLoginPayload>;
   emailConfirmation?: Maybe<UsersPermissionsLoginPayload>;
+};
+
+
+export type MutationCreateCategoryArgs = {
+  input?: Maybe<CreateCategoryInput>;
+};
+
+
+export type MutationUpdateCategoryArgs = {
+  input?: Maybe<UpdateCategoryInput>;
+};
+
+
+export type MutationDeleteCategoryArgs = {
+  input?: Maybe<DeleteCategoryInput>;
 };
 
 
@@ -227,6 +323,9 @@ export enum PublicationState {
 
 export type Query = {
   __typename?: 'Query';
+  category?: Maybe<Category>;
+  categories?: Maybe<Array<Maybe<Category>>>;
+  categoriesConnection?: Maybe<CategoryConnection>;
   review?: Maybe<Review>;
   reviews?: Maybe<Array<Maybe<Review>>>;
   reviewsConnection?: Maybe<ReviewConnection>;
@@ -240,6 +339,29 @@ export type Query = {
   users?: Maybe<Array<Maybe<UsersPermissionsUser>>>;
   usersConnection?: Maybe<UsersPermissionsUserConnection>;
   me?: Maybe<UsersPermissionsMe>;
+};
+
+
+export type QueryCategoryArgs = {
+  id: Scalars['ID'];
+  publicationState?: Maybe<PublicationState>;
+};
+
+
+export type QueryCategoriesArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+  publicationState?: Maybe<PublicationState>;
+};
+
+
+export type QueryCategoriesConnectionArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
 };
 
 
@@ -337,6 +459,15 @@ export type Review = {
   rating: Scalars['Int'];
   body: Scalars['String'];
   published_at?: Maybe<Scalars['DateTime']>;
+  categories?: Maybe<Array<Maybe<Category>>>;
+};
+
+
+export type ReviewCategoriesArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
 };
 
 export type ReviewAggregator = {
@@ -433,6 +564,7 @@ export type ReviewInput = {
   title: Scalars['String'];
   rating: Scalars['Int'];
   body: Scalars['String'];
+  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
   published_at?: Maybe<Scalars['DateTime']>;
   created_by?: Maybe<Scalars['ID']>;
   updated_by?: Maybe<Scalars['ID']>;
@@ -878,6 +1010,15 @@ export type UsersPermissionsUserGroupBy = {
   role?: Maybe<Array<Maybe<UsersPermissionsUserConnectionRole>>>;
 };
 
+export type CreateCategoryInput = {
+  data?: Maybe<CategoryInput>;
+};
+
+export type CreateCategoryPayload = {
+  __typename?: 'createCategoryPayload';
+  category?: Maybe<Category>;
+};
+
 export type CreateReviewInput = {
   data?: Maybe<ReviewInput>;
 };
@@ -903,6 +1044,15 @@ export type CreateUserInput = {
 export type CreateUserPayload = {
   __typename?: 'createUserPayload';
   user?: Maybe<UsersPermissionsUser>;
+};
+
+export type DeleteCategoryInput = {
+  where?: Maybe<InputId>;
+};
+
+export type DeleteCategoryPayload = {
+  __typename?: 'deleteCategoryPayload';
+  category?: Maybe<Category>;
 };
 
 export type DeleteFileInput = {
@@ -941,6 +1091,14 @@ export type DeleteUserPayload = {
   user?: Maybe<UsersPermissionsUser>;
 };
 
+export type EditCategoryInput = {
+  name?: Maybe<Scalars['String']>;
+  reviews?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
 export type EditFileInput = {
   name?: Maybe<Scalars['String']>;
   alternativeText?: Maybe<Scalars['String']>;
@@ -972,6 +1130,7 @@ export type EditReviewInput = {
   title?: Maybe<Scalars['String']>;
   rating?: Maybe<Scalars['Int']>;
   body?: Maybe<Scalars['String']>;
+  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
   published_at?: Maybe<Scalars['DateTime']>;
   created_by?: Maybe<Scalars['ID']>;
   updated_by?: Maybe<Scalars['ID']>;
@@ -999,6 +1158,16 @@ export type EditUserInput = {
   role?: Maybe<Scalars['ID']>;
   created_by?: Maybe<Scalars['ID']>;
   updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type UpdateCategoryInput = {
+  where?: Maybe<InputId>;
+  data?: Maybe<EditCategoryInput>;
+};
+
+export type UpdateCategoryPayload = {
+  __typename?: 'updateCategoryPayload';
+  category?: Maybe<Category>;
 };
 
 export type UpdateReviewInput = {
@@ -1060,3 +1229,8 @@ export const useGetReviewsQuery = <
       fetcher<GetReviewsQuery, GetReviewsQueryVariables>(client, GetReviewsDocument, variables),
       options
     );
+useGetReviewsQuery.document = GetReviewsDocument;
+
+useGetReviewsQuery.getKey = (variables?: GetReviewsQueryVariables) => ['GetReviews', variables];
+
+useGetReviewsQuery.fetcher = (client: GraphQLClient, variables?: GetReviewsQueryVariables) => fetcher<GetReviewsQuery, GetReviewsQueryVariables>(client, GetReviewsDocument, variables);
