@@ -1,11 +1,11 @@
 import { GetReviewsQuery, useGetReviewsQuery } from "@graphql/codegen";
 import graphqlRequestClient from "@lib/gql-client";
-import { GetStaticProps } from "next";
+import { GetStaticProps, NextPage } from "next";
 import { QueryClient } from "react-query";
 import { dehydrate } from "react-query/hydration";
 import { DehydratedState } from "react-query/types/hydration";
 
-export default function Reviews() {
+const Reviews: NextPage = () => {
   const { isLoading, error, data } = useGetReviewsQuery<GetReviewsQuery, Error>(
     graphqlRequestClient,
     {}
@@ -26,7 +26,7 @@ export default function Reviews() {
       ))}
     </div>
   );
-}
+};
 
 export const getStaticProps: GetStaticProps = async (): Promise<{
   props: { dehydratedState: DehydratedState };
@@ -42,3 +42,5 @@ export const getStaticProps: GetStaticProps = async (): Promise<{
     },
   };
 };
+
+export default Reviews;
