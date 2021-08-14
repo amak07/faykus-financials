@@ -1,34 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Faykus Financials - Frontend
 
-## Getting Started
+### Powered by
 
-First, run the development server:
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/440px-Nextjs-logo.svg.png" width="200" />
 
-```bash
-npm run dev
-# or
+![Vercel](https://vercelbadge.vercel.app/api/amak07/faykus-financials)
+
+## Features
+
+- Static generation for fast-loading webpages
+- Flexible, mobile-first design
+- Integrates with the Strapi blog system
+- Can register users for weekly newsletters using Strapi email system
+
+## Tech
+
+**Frontend** uses a number of open source projects to work properly:
+
+- [Next](https://nextjs.org/learn) - React framework for delivering pre-rendered webpages.
+- [React](https://reactjs.org/docs/getting-started.html) - UI library for building webpages
+
+**Frontend** requires the following cloud-based services (for production):
+
+- [Vercel](https://vercel.com/amak07/faykus-financials) - deploys **Frontend** onto the cloud
+
+And of course, the **Frontend** source code can be found on [Github](https://github.com/amak07/faykus-financials).
+
+## Installation
+
+**Frontend** requires [Node.js](https://nodejs.org/) v12+ to run.
+
+Install the dependencies and devDependencies and start the server.
+
+```sh
+cd faykus-financials/frontend
+yarn install
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Next.js Plugins
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+**Frontend** is a Next.js project but will leverage a number of important 3rd-party libraries for additional functionality.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.tsx`.
+| Plugin           | Setup Guide                             |
+| ---------------- | --------------------------------------- |
+| React Query      | https://react-query.tanstack.com/       |
+| GraphQL Code Gen | https://www.graphql-code-generator.com/ |
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Development
 
-## Learn More
+Open your favorite Terminal and run the following command to start the dev server in folder `faykus-financials/frontend`.
 
-To learn more about Next.js, take a look at the following resources:
+```sh
+yarn dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+For production release, the Next.js instance hosted on Vercel will build and deploy automatically when new source code is checked into the `main` branch.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To manually run and serve the production build locally:
 
-## Deploy on Vercel
+```sh
+cd faykus-financials/frontend
+yarn serve:prod
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Frontend** is a Next.js instance that is hosted and deployed on Vercel.
+
+By default, new changes made in development will be pushed to this production instance when these chagnes are checked into the `main` branch.
