@@ -35,6 +35,8 @@ export const getStaticProps: GetStaticProps = async (): Promise<{
     process.env.REVIEWS_ENDPOINT as string
   );
 
+  console.log("reviews endpoint", process.env.REVIEWS_ENDPOINT as string);
+
   return {
     props: {
       dehydratedState,
