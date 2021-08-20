@@ -1200,12 +1200,47 @@ export type UpdateUserPayload = {
   user?: Maybe<UsersPermissionsUser>;
 };
 
+export type GetReviewQueryVariables = Exact<{
+  id: Scalars['ID'];
+}>;
+
+
+export type GetReviewQuery = { __typename?: 'Query', review?: Maybe<{ __typename?: 'Review', id: string, title: string, body: string, rating: number }> };
+
 export type GetReviewsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetReviewsQuery = { __typename?: 'Query', reviews?: Maybe<Array<Maybe<{ __typename?: 'Review', id: string, title: string, body: string, rating: number }>>> };
 
 
+export const GetReviewDocument = `
+    query GetReview($id: ID!) {
+  review(id: $id) {
+    id
+    title
+    body
+    rating
+  }
+}
+    `;
+export const useGetReviewQuery = <
+      TData = GetReviewQuery,
+      TError = unknown
+    >(
+      client: GraphQLClient, 
+      variables: GetReviewQueryVariables, 
+      options?: UseQueryOptions<GetReviewQuery, TError, TData>
+    ) => 
+    useQuery<GetReviewQuery, TError, TData>(
+      ['GetReview', variables],
+      fetcher<GetReviewQuery, GetReviewQueryVariables>(client, GetReviewDocument, variables),
+      options
+    );
+useGetReviewQuery.document = GetReviewDocument;
+
+useGetReviewQuery.getKey = (variables: GetReviewQueryVariables) => ['GetReview', variables];
+
+useGetReviewQuery.fetcher = (client: GraphQLClient, variables: GetReviewQueryVariables) => fetcher<GetReviewQuery, GetReviewQueryVariables>(client, GetReviewDocument, variables);
 export const GetReviewsDocument = `
     query GetReviews {
   reviews {

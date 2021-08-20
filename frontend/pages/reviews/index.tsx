@@ -1,8 +1,10 @@
 import { GetReviewsQuery, useGetReviewsQuery } from "@graphql/codegen";
 import GraphQLRequestClient from "@lib/clients/gql-client";
-import PrefetchClient from "@lib/clients/prefetch-client";
 import { GetStaticProps, NextPage } from "next";
 import { DehydratedState } from "react-query/types/hydration";
+import Link from "next/link";
+import { QueryClient } from "react-query";
+import { dehydrate } from "react-query/hydration";
 
 const Reviews: NextPage = () => {
   const { isLoading, error, data } = useGetReviewsQuery<GetReviewsQuery, Error>(
@@ -21,6 +23,9 @@ const Reviews: NextPage = () => {
           <h2>{review?.title}</h2>
           <small>console list</small>
           <p>{review?.body.substr(0, 100)}...</p>
+          <Link href={"/reviews/" + review?.id}>
+            <a>Read more...</a>
+          </Link>
         </div>
       ))}
     </div>
@@ -30,16 +35,15 @@ const Reviews: NextPage = () => {
 export const getStaticProps: GetStaticProps = async (): Promise<{
   props: { dehydratedState: DehydratedState };
 }> => {
-  const dehydratedState = await PrefetchClient(
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery(
     useGetReviewsQuery.getKey(),
-    process.env.REVIEWS_ENDPOINT as string
+    useGetReviewsQuery.fetcher(GraphQLRequestClient)
   );
-
-  console.log("reviews endpoint", process.env.REVIEWS_ENDPOINT as string);
 
   return {
     props: {
-      dehydratedState,
+      dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
     },
   };
 };
