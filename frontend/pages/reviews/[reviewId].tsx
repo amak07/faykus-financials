@@ -1,4 +1,8 @@
-import { GetReviewQuery, useGetReviewQuery } from "@graphql/codegen";
+import {
+  GetReviewQuery,
+  useGetReviewQuery,
+  useGetReviewsQuery,
+} from "@graphql/codegen";
 import GraphQLRequestClient from "@lib/clients/gql-client";
 import { GetStaticProps, NextPage } from "next";
 import React from "react";
@@ -31,20 +35,21 @@ const ReviewDetails: NextPage = () => {
 };
 
 export const getStaticPaths = async () => {
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery(
+    useGetReviewsQuery.getKey(),
+    useGetReviewsQuery.fetcher(GraphQLRequestClient)
+  );
+
+  const data: { reviews: [] } | undefined = queryClient.getQueryData(
+    useGetReviewsQuery.getKey()
+  );
+
   return {
     fallback: false,
-    paths: [
-      {
-        params: {
-          reviewId: "1",
-        },
-      },
-      {
-        params: {
-          reviewId: "2",
-        },
-      },
-    ],
+    paths: data?.reviews?.map((review: { id: string }) => ({
+      params: { reviewId: review?.id },
+    })),
   };
 };
 
