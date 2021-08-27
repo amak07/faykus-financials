@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import { DehydratedState } from "react-query/types/hydration";
 import { dehydrate } from "react-query/hydration";
 import { QueryClient } from "react-query";
+import ReviewCard from "@components/pages/reviews/ReviewCard";
 
 const ReviewDetails: NextPage = () => {
   const { query } = useRouter();
@@ -24,14 +25,7 @@ const ReviewDetails: NextPage = () => {
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  return (
-    <div className="review-card">
-      <div className="rating">{data?.review?.rating}</div>
-      <h2>{data?.review?.title}</h2>
-      <small>console list</small>
-      <p>{data?.review?.body}</p>
-    </div>
-  );
+  return <ReviewCard review={data?.review} />;
 };
 
 export const getStaticPaths = async () => {

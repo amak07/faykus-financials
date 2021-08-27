@@ -2,9 +2,9 @@ import { GetReviewsQuery, useGetReviewsQuery } from "@graphql/codegen";
 import GraphQLRequestClient from "@lib/clients/gql-client";
 import { GetStaticProps, NextPage } from "next";
 import { DehydratedState } from "react-query/types/hydration";
-import Link from "next/link";
 import { QueryClient } from "react-query";
 import { dehydrate } from "react-query/hydration";
+import ReviewCard from "@components/pages/reviews/ReviewCard";
 
 const Reviews: NextPage = () => {
   const { isLoading, error, data } = useGetReviewsQuery<GetReviewsQuery, Error>(
@@ -18,15 +18,7 @@ const Reviews: NextPage = () => {
   return (
     <div>
       {data?.reviews?.map((review) => (
-        <div key={review?.id} className="review-card">
-          <div className="rating">{review?.rating}</div>
-          <h2>{review?.title}</h2>
-          <small>console list</small>
-          <p>{review?.body.substr(0, 100)}...</p>
-          <Link href={"/reviews/" + review?.id}>
-            <a>Read more...</a>
-          </Link>
-        </div>
+        <ReviewCard key={review?.id} review={review} />
       ))}
     </div>
   );
