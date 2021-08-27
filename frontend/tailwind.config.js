@@ -11,7 +11,8 @@ module.exports = {
   variants: {
     extend: {
       animation: ['group-hover'],
-      textColor: ['active'],
+      textColor: ['active', 'first'],
+      padding: ['last'],
     },
   },
   plugins: [require('tailwind-scrollbar-hide')],
