@@ -18,7 +18,7 @@ function ReviewCard({
       <div className={styles.rating}>{review?.rating}</div>
       <h2>{review?.title}</h2>
       <p>{review?.body.substr(0, 100)}...</p>
-      <Link href={"/reviews/" + review?.id}>
+      <Link href={"/examples/gamer-reviews/" + review?.id}>
         <a>Read more...</a>
       </Link>
     </div>

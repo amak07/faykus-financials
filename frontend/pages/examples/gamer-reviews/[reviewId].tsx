@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 import { DehydratedState } from "react-query/types/hydration";
 import { dehydrate } from "react-query/hydration";
 import { QueryClient } from "react-query";
-import ReviewCard from "@components/pages/reviews/ReviewCard";
+import ReviewCard from "@components/pages/examples/gamer-reviews/ReviewCard";
 
 const ReviewDetails: NextPage = () => {
   const { query } = useRouter();

@@ -13,8 +13,8 @@ const Thumbnail = ({ result }: { result: Result }) => {
       <Image
         layout="responsive"
         src={`${BASE_URL}${result.poster_path || result.backdrop_path}`}
-        height={1080}
-        width={1920}
+        height={140}
+        width={120}
         alt=""
       />
 

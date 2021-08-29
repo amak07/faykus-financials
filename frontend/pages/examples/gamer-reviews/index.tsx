@@ -4,7 +4,7 @@ import { GetStaticProps, NextPage } from "next";
 import { DehydratedState } from "react-query/types/hydration";
 import { QueryClient } from "react-query";
 import { dehydrate } from "react-query/hydration";
-import ReviewCard from "@components/pages/reviews/ReviewCard";
+import ReviewCard from "@components/pages/examples/gamer-reviews/ReviewCard";
 
 const Reviews: NextPage = () => {
   const { isLoading, error, data } = useGetReviewsQuery<GetReviewsQuery, Error>(
