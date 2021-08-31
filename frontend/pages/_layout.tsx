@@ -14,7 +14,7 @@ const Layout: React.FC = ({ children }) => {
 
       <Nav />
 
-      <main className="flex flex-col justify-start pt-32 w-full">
+      <main className="flex flex-col justify-start pt-36 sm:pt-20 w-full">
         {children}
       </main>
 

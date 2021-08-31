@@ -1,6 +1,5 @@
 import Head from "next/head";
 import WelcomeSection from "@components/pages/faykus-landing/WelcomeSection";
-import { MenuAlt2Icon } from "@heroicons/react/solid";
 
 function HomePage() {
   return (

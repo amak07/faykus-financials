@@ -29,9 +29,10 @@ module.exports = {
   variants: {
     extend: {
       animation: ['group-hover'],
-      textColor: ['active', 'first'],
+      textColor: ['active', 'first', 'hover'],
       padding: ['last'],
       fontWeight: ['hover', 'focus'],
+      backgroundColor: ['active', 'hover']
     },
   },
   plugins: [require('tailwind-scrollbar-hide'), require('daisyui')],
