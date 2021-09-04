@@ -5,7 +5,7 @@ interface Props {
   href: string;
   children: React.ReactNode;
 }
-const Link: React.FC<Props> = ({ href = "/", children }) => {
+const TextLink: React.FC<Props> = ({ href = "/", children }) => {
   return (
     <NextLink href={href}>
       <a
@@ -23,4 +23,4 @@ const Link: React.FC<Props> = ({ href = "/", children }) => {
   );
 };
 
-export default Link;
+export default TextLink;
