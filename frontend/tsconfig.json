@@ -16,7 +16,8 @@
     "paths": {
       "@components/*": ["./components/*"],
       "@lib/*": ["./lib/*"],
-      "@graphql/*": ["./graphql/codegen"]
+      "@graphql/*": ["./graphql/codegen"],
+      "@data/*": ["./data/*"]
     },
     "baseUrl": "."
   },

@@ -1,5 +1,6 @@
 import Nav from "@components/common/Nav";
 import Footer from "@components/common/Footer";
+import { faykusLinks, faykusLogin } from "@data/faykus-financial";
 
 const Layout: React.FC = ({ children }) => {
   return (
@@ -12,7 +13,7 @@ const Layout: React.FC = ({ children }) => {
         `}
       </style>
 
-      <Nav />
+      <Nav links={faykusLinks} cta={faykusLogin} />
 
       <main className="flex flex-col justify-start pt-36 sm:pt-20 w-full">
         {children}

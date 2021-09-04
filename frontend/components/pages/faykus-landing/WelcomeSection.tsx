@@ -27,8 +27,8 @@ const WelcomeSection = () => {
               className={`
               font-bold text-white
               invisible absolute top-24 left-24
-              lg:visible lg:text-6xl lg:max-w-sm
-              xl:text-8xl max-w-lg
+              lg:visible lg:text-5xl lg:max-w-sm
+              xl:text-7xl max-w-lg
             `}
             >
               Building wealth intentionally.
