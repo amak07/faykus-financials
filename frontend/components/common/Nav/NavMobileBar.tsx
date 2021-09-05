@@ -15,7 +15,7 @@ const NavMobileBar: React.FC<Props> = ({ renderLinks, renderCTA }) => {
     `}
     >
       <div className="flex justify-center items-center w-1/2 border-r-2">
-        <div className="dropdown">
+        <div className="dropdown dropdown-right">
           <div tabIndex={0} className="m-1 bg-white">
             <MenuAlt2Icon className="h-12 w-12 text-cyan"></MenuAlt2Icon>
           </div>

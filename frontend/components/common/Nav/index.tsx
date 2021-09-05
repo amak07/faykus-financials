@@ -21,9 +21,11 @@ const Nav: React.FC<Props> = ({ links, cta }) => {
     <nav id="header" className="w-full z-30 text-white bg-white fixed">
       <NavDesktopBar
         renderLogo={() => (
-          <a className="toggleColour no-underline hover:no-underline">
-            <Image src={logo} alt="" height={80} width={285} />
-          </a>
+          <NextLink href="/">
+            <a className="toggleColour no-underline hover:no-underline">
+              <Image src={logo} alt="" height={80} width={285} />
+            </a>
+          </NextLink>
         )}
         renderLinks={() => {
           return (
