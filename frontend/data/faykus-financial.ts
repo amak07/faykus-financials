@@ -9,25 +9,25 @@ export const faykusLinks = [
   },
   {
     name: 'About',
-    route: '/'
+    route: '/about'
   },
   {
     name: 'Clients',
-    route: '/'
+    route: '/clients'
   },
   {
     name: 'Services',
-    route: '/'
+    route: '/services'
   },
   {
     name: 'Contact Us',
-    route: '/'
+    route: '/contact'
   }
 ]
 
 export const faykusLogin = {
   name: 'Client Login',
-  route: '/'
+  route: '/client'
 }
 
 export const faykusServices = [

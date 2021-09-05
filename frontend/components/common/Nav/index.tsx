@@ -5,6 +5,7 @@ import NavMobileBar from "./NavMobileBar";
 import logo from "public/faykus-logo.png";
 import Image from "next/image";
 import NextLink from "next/link";
+import { useRouter } from "next/router";
 
 export type NavRoute = {
   name: string;
@@ -17,6 +18,8 @@ interface Props {
 }
 
 const Nav: React.FC<Props> = ({ links, cta }) => {
+  const router = useRouter();
+
   return (
     <nav id="header" className="w-full z-30 text-white bg-white fixed">
       <NavDesktopBar
@@ -33,7 +36,12 @@ const Nav: React.FC<Props> = ({ links, cta }) => {
               {links.map((link) => (
                 <li className="mr-3" key={link.name}>
                   <NextLink href={link.route}>
-                    <a className="inline-block py-2 px-4 text-ochre font-bold no-underline">
+                    <a
+                      className={`
+                        inline-block py-2 px-4 text-ochre no-underline
+                        ${router.pathname === link.route ? "font-bold" : ""} 
+                      `}
+                    >
                       {link.name}
                     </a>
                   </NextLink>
@@ -57,8 +65,12 @@ const Nav: React.FC<Props> = ({ links, cta }) => {
               {links.map((link) => (
                 <li className="mr-3" key={link.name}>
                   <NextLink href={link.route}>
-                    <a className="inline-block py-2 px-4 text-ochre font-bold no-underline">
-                      {link.name}
+                    <a
+                      className={`
+                      inline-block py-2 px-4 text-ochre no-underline
+                      `}
+                    >
+                      {link.name} {router.pathname} fasddf
                     </a>
                   </NextLink>
                 </li>
