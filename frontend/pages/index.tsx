@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Welcome from "@components/pages/faykus-landing/Welcome";
 import Services from "@components/pages/faykus-landing/Services";
+import Blue from "@components/pages/faykus-landing/Blue";
 
 function HomePage() {
   return (
@@ -19,6 +20,7 @@ function HomePage() {
 
       <Welcome />
       <Services />
+      <Blue />
     </>
   );
 }

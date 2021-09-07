@@ -70,7 +70,7 @@ const Nav: React.FC<Props> = ({ links, cta }) => {
                       inline-block py-2 px-4 text-ochre no-underline
                       `}
                     >
-                      {link.name} {router.pathname} fasddf
+                      {link.name}
                     </a>
                   </NextLink>
                 </li>

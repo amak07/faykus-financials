@@ -7,7 +7,7 @@ const Services = () => {
   const [selectedIndex, setSelectedIndex] = useState<number>(-1);
 
   return (
-    <section className="container mx-auto flex flex-wrap bg-white border-b py-8 my-8">
+    <section className="container mx-auto flex flex-wrap bg-white border-b py-8">
       <h1
         className={`
               w-full

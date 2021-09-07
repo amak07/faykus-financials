@@ -165,13 +165,16 @@ export type LocaleInput = {
 };
 
 
-export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Category | CategoryConnection | CategoryAggregator | CategoryGroupBy | CategoryConnectionId | CategoryConnectionCreated_At | CategoryConnectionUpdated_At | CategoryConnectionName | CategoryConnectionPublished_At | CreateCategoryPayload | UpdateCategoryPayload | DeleteCategoryPayload | Review | ReviewConnection | ReviewAggregator | ReviewAggregatorSum | ReviewAggregatorAvg | ReviewAggregatorMin | ReviewAggregatorMax | ReviewGroupBy | ReviewConnectionId | ReviewConnectionCreated_At | ReviewConnectionUpdated_At | ReviewConnectionTitle | ReviewConnectionRating | ReviewConnectionBody | ReviewConnectionPublished_At | CreateReviewPayload | UpdateReviewPayload | DeleteReviewPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_At | UploadFileConnectionUpdated_At | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | DeleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | CreateUserPayload | UpdateUserPayload | DeleteUserPayload;
+export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Category | CategoryConnection | CategoryAggregator | CategoryGroupBy | CategoryConnectionId | CategoryConnectionCreated_At | CategoryConnectionUpdated_At | CategoryConnectionName | CategoryConnectionPublished_At | CreateCategoryPayload | UpdateCategoryPayload | DeleteCategoryPayload | Page | PageConnection | PageAggregator | PageGroupBy | PageConnectionId | PageConnectionCreated_At | PageConnectionUpdated_At | PageConnectionMainImage | PageConnectionPublished_At | CreatePagePayload | UpdatePagePayload | DeletePagePayload | Review | ReviewConnection | ReviewAggregator | ReviewAggregatorSum | ReviewAggregatorAvg | ReviewAggregatorMin | ReviewAggregatorMax | ReviewGroupBy | ReviewConnectionId | ReviewConnectionCreated_At | ReviewConnectionUpdated_At | ReviewConnectionTitle | ReviewConnectionRating | ReviewConnectionBody | ReviewConnectionPublished_At | CreateReviewPayload | UpdateReviewPayload | DeleteReviewPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_At | UploadFileConnectionUpdated_At | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | DeleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | CreateUserPayload | UpdateUserPayload | DeleteUserPayload;
 
 export type Mutation = {
   __typename?: 'Mutation';
   createCategory?: Maybe<CreateCategoryPayload>;
   updateCategory?: Maybe<UpdateCategoryPayload>;
   deleteCategory?: Maybe<DeleteCategoryPayload>;
+  createPage?: Maybe<CreatePagePayload>;
+  updatePage?: Maybe<UpdatePagePayload>;
+  deletePage?: Maybe<DeletePagePayload>;
   createReview?: Maybe<CreateReviewPayload>;
   updateReview?: Maybe<UpdateReviewPayload>;
   deleteReview?: Maybe<DeleteReviewPayload>;
@@ -212,6 +215,21 @@ export type MutationUpdateCategoryArgs = {
 
 export type MutationDeleteCategoryArgs = {
   input?: Maybe<DeleteCategoryInput>;
+};
+
+
+export type MutationCreatePageArgs = {
+  input?: Maybe<CreatePageInput>;
+};
+
+
+export type MutationUpdatePageArgs = {
+  input?: Maybe<UpdatePageInput>;
+};
+
+
+export type MutationDeletePageArgs = {
+  input?: Maybe<DeletePageInput>;
 };
 
 
@@ -316,6 +334,74 @@ export type MutationEmailConfirmationArgs = {
   confirmation: Scalars['String'];
 };
 
+export type Page = {
+  __typename?: 'Page';
+  id: Scalars['ID'];
+  created_at: Scalars['DateTime'];
+  updated_at: Scalars['DateTime'];
+  mainImage?: Maybe<UploadFile>;
+  published_at?: Maybe<Scalars['DateTime']>;
+};
+
+export type PageAggregator = {
+  __typename?: 'PageAggregator';
+  count?: Maybe<Scalars['Int']>;
+  totalCount?: Maybe<Scalars['Int']>;
+};
+
+export type PageConnection = {
+  __typename?: 'PageConnection';
+  values?: Maybe<Array<Maybe<Page>>>;
+  groupBy?: Maybe<PageGroupBy>;
+  aggregate?: Maybe<PageAggregator>;
+};
+
+export type PageConnectionCreated_At = {
+  __typename?: 'PageConnectionCreated_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<PageConnection>;
+};
+
+export type PageConnectionId = {
+  __typename?: 'PageConnectionId';
+  key?: Maybe<Scalars['ID']>;
+  connection?: Maybe<PageConnection>;
+};
+
+export type PageConnectionMainImage = {
+  __typename?: 'PageConnectionMainImage';
+  key?: Maybe<Scalars['ID']>;
+  connection?: Maybe<PageConnection>;
+};
+
+export type PageConnectionPublished_At = {
+  __typename?: 'PageConnectionPublished_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<PageConnection>;
+};
+
+export type PageConnectionUpdated_At = {
+  __typename?: 'PageConnectionUpdated_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<PageConnection>;
+};
+
+export type PageGroupBy = {
+  __typename?: 'PageGroupBy';
+  id?: Maybe<Array<Maybe<PageConnectionId>>>;
+  created_at?: Maybe<Array<Maybe<PageConnectionCreated_At>>>;
+  updated_at?: Maybe<Array<Maybe<PageConnectionUpdated_At>>>;
+  mainImage?: Maybe<Array<Maybe<PageConnectionMainImage>>>;
+  published_at?: Maybe<Array<Maybe<PageConnectionPublished_At>>>;
+};
+
+export type PageInput = {
+  mainImage?: Maybe<Scalars['ID']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
 export enum PublicationState {
   Live = 'LIVE',
   Preview = 'PREVIEW'
@@ -326,6 +412,9 @@ export type Query = {
   category?: Maybe<Category>;
   categories?: Maybe<Array<Maybe<Category>>>;
   categoriesConnection?: Maybe<CategoryConnection>;
+  page?: Maybe<Page>;
+  pages?: Maybe<Array<Maybe<Page>>>;
+  pagesConnection?: Maybe<PageConnection>;
   review?: Maybe<Review>;
   reviews?: Maybe<Array<Maybe<Review>>>;
   reviewsConnection?: Maybe<ReviewConnection>;
@@ -358,6 +447,29 @@ export type QueryCategoriesArgs = {
 
 
 export type QueryCategoriesConnectionArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+};
+
+
+export type QueryPageArgs = {
+  id: Scalars['ID'];
+  publicationState?: Maybe<PublicationState>;
+};
+
+
+export type QueryPagesArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+  publicationState?: Maybe<PublicationState>;
+};
+
+
+export type QueryPagesConnectionArgs = {
   sort?: Maybe<Scalars['String']>;
   limit?: Maybe<Scalars['Int']>;
   start?: Maybe<Scalars['Int']>;
@@ -1019,6 +1131,15 @@ export type CreateCategoryPayload = {
   category?: Maybe<Category>;
 };
 
+export type CreatePageInput = {
+  data?: Maybe<PageInput>;
+};
+
+export type CreatePagePayload = {
+  __typename?: 'createPagePayload';
+  page?: Maybe<Page>;
+};
+
 export type CreateReviewInput = {
   data?: Maybe<ReviewInput>;
 };
@@ -1062,6 +1183,15 @@ export type DeleteFileInput = {
 export type DeleteFilePayload = {
   __typename?: 'deleteFilePayload';
   file?: Maybe<UploadFile>;
+};
+
+export type DeletePageInput = {
+  where?: Maybe<InputId>;
+};
+
+export type DeletePagePayload = {
+  __typename?: 'deletePagePayload';
+  page?: Maybe<Page>;
 };
 
 export type DeleteReviewInput = {
@@ -1126,6 +1256,13 @@ export type EditLocaleInput = {
   updated_by?: Maybe<Scalars['ID']>;
 };
 
+export type EditPageInput = {
+  mainImage?: Maybe<Scalars['ID']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
 export type EditReviewInput = {
   title?: Maybe<Scalars['String']>;
   rating?: Maybe<Scalars['Int']>;
@@ -1168,6 +1305,16 @@ export type UpdateCategoryInput = {
 export type UpdateCategoryPayload = {
   __typename?: 'updateCategoryPayload';
   category?: Maybe<Category>;
+};
+
+export type UpdatePageInput = {
+  where?: Maybe<InputId>;
+  data?: Maybe<EditPageInput>;
+};
+
+export type UpdatePagePayload = {
+  __typename?: 'updatePagePayload';
+  page?: Maybe<Page>;
 };
 
 export type UpdateReviewInput = {

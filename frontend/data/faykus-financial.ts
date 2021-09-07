@@ -1,6 +1,12 @@
+// services
 import wealth from "public/wealth.webp";
 import legacy from "public/legacy.webp";
 import impact from "public/impact.png";
+
+// client photos
+import executive from "public/corporate-executive.jpeg";
+import affluent from "public/Affluent-Families-Individuals.jpeg";
+import family from "public/Family-Business-Owners.jpeg";
 
 export const faykusLinks = [
   {
@@ -58,6 +64,43 @@ export const faykusServices = [
     which they would like to be a catalyst for change. Once the mission is clear, 
     we partner with them to develop strategies for creating the specific impact they 
     want to create.
+    `
+  }
+]
+
+export const faykusClients = [
+  {
+    name: 'Corporate Executives',
+    image: executive,
+    position: 'left',
+    desc: `
+    C-suite and senior-level executives have unique wealth management challenges as a result of corporate compensation structures, especially the accumulation of financial assets invested in various forms of company stock. We help our executive clients by advising on the compensation negotiation, identifying ways to help protect personal and professional assets due to an oversized position, and taxation issues triggered by equity-based and deferred compensation.
+    `
+  },
+  {
+    name: 'Family Business Owners',
+    image: family,
+    position: 'right',
+    desc: `
+    It is essential to develop and kindle a financial legacy while
+    the business remains under its current ownership. For a family
+    business owner or operator, that includes relying on the use
+    of sophisticated and strategic tax planning and building an
+    estate plan that accounts for the financial future they want
+    for themselves and future generations.
+    `
+  },
+  {
+    name: 'Affluent Families & Individuals',
+    image: affluent,
+    position: 'left',
+    desc: `
+    Affluent families also have a great interest in leaving a
+    legacy for future generations. To some, nothing is more
+    important than passing on family values, relics, and financial
+    security to their children and grandchildren. We design
+    strategies specifically to provide for your loved ones and
+    limit exposure to taxes while generating new income.
     `
   }
 ]
