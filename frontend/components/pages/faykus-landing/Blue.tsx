@@ -6,16 +6,16 @@ const Blue = () => {
     <>
       <div
         className={`
-        container bg-gradient-to-r from-cyan 
-        via-cyan-text to-cyan-accent p-6 sm:p-32
+        bg-gradient-to-r from-cyan 
+        via-cyan-text to-cyan-accent p-6 md:p-32
       `}
       >
-        <div className="bg-white text-black rounded-2xl p-4 sm:p-16">
+        <div className="bg-white text-black rounded-2xl p-4 md:p-16 container mx-auto max-w-6xl">
           <h2 className="text-4xl text-cyan">
             {`We're the People That Puts You Above All`}
           </h2>
 
-          <p className="text-ochre-text mt-8 sm:mb-16 text-lg hidden sm:block">
+          <p className="text-ochre-text mt-8 md:mb-16 text-lg hidden md:block">
             Faykus Financial, LLC is a values-driven wealth management firm
             headquartered in Austin, TX. We work with successful families who
             desire to make the transition from financial success to magnified
@@ -31,7 +31,7 @@ const Blue = () => {
             build and protect your family’s plan.
           </p>
 
-          <div className="collapse border border-ochre rounded-box collapse-arrow mt-16 sm:hidden">
+          <div className="collapse border border-ochre rounded-box collapse-arrow mt-16 md:hidden">
             <input type="checkbox" />
             <div className="collapse-title text-xl font-bold text-ochre-text">
               Our Mission
@@ -59,11 +59,11 @@ const Blue = () => {
             </div>
           </div>
 
-          <div className="flex-col justify-center items-center hidden sm:flex">
+          <div className="flex-col justify-center items-center hidden md:flex">
             {faykusClients.map((client) => (
               <div
                 key={client.name}
-                className="card sm:card-side shadow-2xl rounded-none my-4 max-w-5xl"
+                className="card sm:card-side shadow-xl rounded-none my-4 max-w-5xl border-ochre border"
               >
                 {client.position === "left" && (
                   <div className="w-1/2 h-96">
@@ -75,9 +75,9 @@ const Blue = () => {
                   </div>
                 )}
 
-                <div className="card-body bg-ochre text-white w-1/3">
-                  <h2 className="card-title">{client.name}</h2>
-                  <p>{client.desc}</p>
+                <div className="card-body w-1/3">
+                  <h2 className="card-title text-ochre">{client.name}</h2>
+                  <p className="text-ochre-text">{client.desc}</p>
                 </div>
 
                 {client.position === "right" && (
@@ -95,7 +95,7 @@ const Blue = () => {
         </div>
       </div>
 
-      <div className="sm:hidden text-center">
+      <div className="md:hidden text-center">
         <h2 className="text-4xl text-cyan my-8">Our Clients</h2>
 
         {faykusClients.map((client) => (

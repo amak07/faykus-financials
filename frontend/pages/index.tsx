@@ -18,9 +18,15 @@ function HomePage() {
         <meta property="og:type" content="article" />
       </Head>
 
-      <Welcome />
+      <div className="py-16">
+        <Welcome />
+      </div>
+
       <Services />
-      <Blue />
+
+      <div className="pb-64">
+        <Blue />
+      </div>
     </>
   );
 }

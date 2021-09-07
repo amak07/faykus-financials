@@ -15,9 +15,7 @@ const Layout: React.FC = ({ children }) => {
 
       <Nav links={faykusLinks} cta={faykusLogin} />
 
-      <main className="pt-36 sm:pt-20 w-full container mx-auto">
-        {children}
-      </main>
+      <main className="pt-36 sm:pt-20 w-full">{children}</main>
 
       <Footer links={faykusLinks} />
     </>
