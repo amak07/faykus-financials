@@ -13,7 +13,7 @@ const Services = () => {
               w-full
               my-2
               text-3xl
-              lg:text-5xl
+              lg:text-4xl
               font-bold
               leading-tight
               text-center text-cyan

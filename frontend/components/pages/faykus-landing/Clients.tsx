@@ -16,7 +16,11 @@ const Clients = () => {
         }}
       >
         <div className="bg-white text-black rounded-2xl p-4 md:p-16 container mx-auto max-w-6xl">
-          <h2 className="text-4xl text-cyan">
+          <h2
+            className="text-3xl
+              lg:text-4xl
+              font-bold text-cyan"
+          >
             {`We're the People That Puts You Above All`}
           </h2>
 
