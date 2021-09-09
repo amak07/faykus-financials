@@ -1,14 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 import { faykusClients } from "@data/faykus-financial";
+import bluepattern from "public/blue-pattern-bg.png";
 
-const Blue = () => {
+const Clients = () => {
   return (
     <>
       <div
         className={`
-        bg-gradient-to-r from-cyan 
-        via-cyan-text to-cyan-accent p-6 md:p-32
+         p-6 md:p-32
       `}
+        style={{
+          backgroundImage: `url(${bluepattern.src})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
       >
         <div className="bg-white text-black rounded-2xl p-4 md:p-16 container mx-auto max-w-6xl">
           <h2 className="text-4xl text-cyan">
@@ -66,7 +71,7 @@ const Blue = () => {
                 className="card sm:card-side shadow-xl rounded-none my-4 max-w-5xl border-ochre border"
               >
                 {client.position === "left" && (
-                  <div className="w-1/2 h-96">
+                  <div className="w-1/2 h-80">
                     <img
                       src={client.image.src}
                       alt=""
@@ -81,7 +86,7 @@ const Blue = () => {
                 </div>
 
                 {client.position === "right" && (
-                  <div className="w-1/2 h-96">
+                  <div className="w-1/2 h-80">
                     <img
                       src={client.image.src}
                       alt=""
@@ -114,4 +119,4 @@ const Blue = () => {
   );
 };
 
-export default Blue;
+export default Clients;

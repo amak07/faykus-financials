@@ -15,9 +15,7 @@ const TextLink: React.FC<Props> = ({ href = "/", children }) => {
     focus:outline-none focus:shadow-outline
   `}
       >
-        <span className="flex flex-row items-center justify-center">
-          {children} {">"}
-        </span>
+        {children} {">"}
       </a>
     </NextLink>
   );

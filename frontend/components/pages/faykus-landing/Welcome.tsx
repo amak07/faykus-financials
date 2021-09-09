@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import WelcomePhoto from "public/homepage.jpeg";
-import Image from "next/image";
 
 const WelcomeSection = () => {
   return (

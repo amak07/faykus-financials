@@ -1,4 +1,4 @@
-import NavCTA from "./NavCTA";
+import NavLoginButton from "./NavLoginButton";
 import NavDesktopBar from "./NavDesktopBar";
 import NavMobileBar from "./NavMobileBar";
 
@@ -50,7 +50,9 @@ const Nav: React.FC<Props> = ({ links, cta }) => {
             </ul>
           );
         }}
-        renderCTA={() => <NavCTA name={cta.name} id="desktop nav cta" />}
+        renderCTA={() => (
+          <NavLoginButton name={cta.name} id="desktop nav cta" />
+        )}
       />
 
       <hr className="border-b border-gray-400 opacity-25 my-0 py-0" />
@@ -78,7 +80,7 @@ const Nav: React.FC<Props> = ({ links, cta }) => {
             </ul>
           );
         }}
-        renderCTA={() => <NavCTA name={cta.name} id="mobile nav cta" />}
+        renderCTA={() => <NavLoginButton name={cta.name} id="mobile nav cta" />}
       />
     </nav>
   );

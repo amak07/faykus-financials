@@ -1,4 +1,4 @@
-const NavCTA = ({ id, name }: { id: string; name: string }) => {
+const NavLoginButton = ({ id, name }: { id: string; name: string }) => {
   return (
     <button
       id={id || "nav action"}
@@ -14,4 +14,4 @@ const NavCTA = ({ id, name }: { id: string; name: string }) => {
   );
 };
 
-export default NavCTA;
+export default NavLoginButton;

@@ -13,7 +13,8 @@ module.exports = {
       cyan: {
         DEFAULT: '#00599c',
         accent: '#5eb4e7',
-        text: '#1779ba'
+        text: '#1779ba',
+        dark: '#0c1427'
       },
       ochre: {
         DEFAULT: '#83794e',
