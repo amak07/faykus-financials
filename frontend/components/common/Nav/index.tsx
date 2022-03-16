@@ -62,7 +62,7 @@ const Nav: React.FC<Props> = ({ links, cta }) => {
           return (
             <ul
               tabIndex={0}
-              className="p-2 shadow menu dropdown-content bg-ochre rounded-box w-52"
+              className="p-2 shadow menu dropdown-content bg-white rounded-box w-52"
             >
               {links.map((link) => (
                 <li className="mr-3" key={link.name}>

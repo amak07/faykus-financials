@@ -1,64 +1,71 @@
-import Image from "next/image";
 import { faykusServices } from "@data/faykus-financial";
-import { useState } from "react";
-import { XIcon } from "@heroicons/react/outline";
 
 const Services = () => {
-  const [selectedIndex, setSelectedIndex] = useState<number>(-1);
-
   return (
-    <section className="mx-auto flex flex-wrap bg-white border-b py-8">
-      <h1
-        className={`
+    <section>
+      <div className="container mx-auto max-w-6xl px-8 sm:px-0">
+        <h1
+          className={`
               w-full
               my-2
               text-3xl
               lg:text-4xl
               font-bold
               leading-tight
-              text-center text-cyan
+              text-cyan
             `}
-      >
-        What are you looking to do?
-      </h1>
+        >
+          Wealth Management
+        </h1>
 
-      <div className="flex flex-col md:flex-row flex-grow flex-shrink mx-auto max-w-6xl">
-        {faykusServices.map((service, index) => (
-          <div key={service.name} className="w-full md:w-1/3 p-6 items-center">
+        <h2 className="text-ochre-text text-lg my-4">
+          You’ve worked hard to build a financial legacy that will live on
+          through your family, and Faykus Financials’ Wealth Management and
+          Trust division is here to help you protect it. We offer the guidance
+          you need to effectively manage your investments, establish an estate
+          settlement, and can even act as your Trustee. You’ve always put your
+          family’s future above all: Let us help you.
+        </h2>
+      </div>
+
+      <div className="container mx-auto max-w-4xl mb-32">
+        <div className="flex-col justify-center items-center hidden md:flex">
+          {faykusServices.map((client) => (
             <div
-              className={`card relative ${
-                selectedIndex === index ? "shadow-xl image-full" : ""
-              }`}
+              key={client.name}
+              className="card sm:card-side shadow-xl rounded-none my-4 max-w-5xl bg-white"
             >
-              <figure>
-                <Image src={service.img} alt="" />
-                <button
-                  onClick={() => setSelectedIndex(index)}
-                  className="text-ochre font-semibold text-3xl text-center underline"
-                >
-                  {service.name}
-                </button>
-              </figure>
-              <div
-                className={`justify-end card-body ${
-                  selectedIndex === index ? "" : "hidden"
-                }`}
-              >
-                <button
-                  className="h-8 w-8 absolute top-4 right-4 z-10"
-                  onClick={() => setSelectedIndex(-1)}
-                >
-                  <XIcon className="text-white"></XIcon>
-                </button>
-                <h2 className="card-title text-white">{service.name}</h2>
-                <p>{service.desc}</p>
-                <div className="card-actions">
-                  <button className="btn btn-primary">Learn More</button>
+              {client.position === "left" && (
+                <div className="w-1/3 h-64">
+                  <img
+                    src={client.image.src}
+                    alt=""
+                    className="h-full w-full"
+                  />
+                </div>
+              )}
+
+              <div className="card-body w-1/3">
+                <h2 className="card-title text-ochre">{client.name}</h2>
+                <p className="text-ochre-text">{client.desc}</p>
+
+                <div className="card-actions justify-end">
+                  <a className="link text-ochre">Learn More {">"}</a>
                 </div>
               </div>
+
+              {client.position === "right" && (
+                <div className="w-1/3 h-64">
+                  <img
+                    src={client.image.src}
+                    alt=""
+                    className="h-full w-full"
+                  />
+                </div>
+              )}
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
