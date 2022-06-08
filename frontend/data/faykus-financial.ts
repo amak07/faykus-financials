@@ -1,8 +1,3 @@
-// services
-import wealth from "public/wealth.jpg";
-import legacy from "public/legacy.jpg";
-import impact from "public/impact.jpg";
-
 // client photos
 import executive from "public/corporate-executive.jpeg";
 import affluent from "public/Affluent-Families-Individuals.jpeg";
@@ -41,40 +36,40 @@ export const faykusServices = [
     name: "Investment Management",
     icon: "lni lni-stats-up",
     desc: `
-    Our clients have worked for years to accumulate their current resources. For many of them, it’s no longer just about accumulating more. It’s about managing wisely. We view our role as stewards, strategists and wise managers working in partnership with our clients.    `,
+    Your Austin financial advisor builds your portfolio strategically to deliver sustainable, customized investment solutions and drive lasting success.     `,
   },
   {
     name: "Wealth Planning",
     icon: "lni lni-investment",
     desc: `
-    Our clients have worked for years to accumulate their current resources. For many of them, it’s no longer just about accumulating more. It’s about managing wisely. We view our role as stewards, strategists and wise managers working in partnership with our clients.    `,
+    We help establish your personalized benchmark to alleviate uncertainty and realize your potential—financial and otherwise.`,
   },
   {
     name: "Land Sale Planning",
     icon: "lni lni-trees",
     desc: `
-    Our clients have worked for years to accumulate their current resources. For many of them, it’s no longer just about accumulating more. It’s about managing wisely. We view our role as stewards, strategists and wise managers working in partnership with our clients.    `,
+    Our Realty Services group is comprised of a team of real estate professionals addressing all aspects of PNC's real estate needs, including the management of our owned and leased real estate portfolio.   `,
   },
   {
     name: "Charitable & Legacy Planning",
     icon: "lni lni-grow",
 
     desc: `
-    We believe every person leaves some kind of legacy in their wake whether it’s intentional or unintentional. We engage with our clients to help them be purposeful about the kind of legacy they are creating and help ensure its one they can be proud of.
+    From choosing a qualified charity to making a qualified charitable distribution, we help you give wisely to support the causes that matter to you most and make the most of your donation.
     `,
   },
   {
     name: "Nonprofit Institutions",
     icon: "lni lni-consulting",
     desc: `
-    We help families gain clarity around the issues for which they would like to be a catalyst for change. Once the mission is clear, we partner with them to develop strategies for creating the specific impact they want to create.
-    `,
+   Nonprofits are certainly more unique and complex in their requirements.
+ Making sure that your finances are up to date and completely accurate is absolutely critical as a nonprofit because you must maintain your organization’s tax-exempt status.    `,
   },
   {
     name: "Family Office",
     icon: "lni lni-home",
     desc: `
-    Our clients have worked for years to accumulate their current resources. For many of them, it’s no longer just about accumulating more. It’s about managing wisely. We view our role as stewards, strategists and wise managers working in partnership with our clients.    `,
+    As part of your comprehensive plan, we offer additional lifestyle management services to oversee household arrangements, from vehicle purchase negotiations to travel itineraries, so you’re able to focus on what matters most to you. `,
   },
 ];
 

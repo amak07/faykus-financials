@@ -102,7 +102,7 @@ const Navbar = () => {
         </div>
       </header>
 
-      <div className="w-full bg-transparent fixed top-20 md:top-32">
+      <div className="w-full bg-transparent fixed top-20 md:top-32 z-10">
         <div
           className={`bg-white mx-4 py-4 px-2 shadow-lg lg:hidden  ${
             showMenu ? "" : "hidden"

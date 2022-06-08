@@ -12,6 +12,10 @@ module.exports = {
 
       ...colors,
     },
+
+    fontFamily: {
+      "GillSansMTPro-Book": ["GillSansMTPro-Book", "sans-serif"],
+    },
   },
   plugins: [require("tailwind-scrollbar-hide"), require("daisyui")],
 };
