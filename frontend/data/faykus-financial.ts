@@ -38,27 +38,43 @@ export const faykusLogin = {
 
 export const faykusServices = [
   {
-    name: "Wealth",
-    image: wealth,
-    position: "left",
+    name: "Investment Management",
+    icon: "lni lni-stats-up",
     desc: `
     Our clients have worked for years to accumulate their current resources. For many of them, it’s no longer just about accumulating more. It’s about managing wisely. We view our role as stewards, strategists and wise managers working in partnership with our clients.    `,
   },
   {
-    name: "Legacy",
-    image: impact,
-    position: "right",
+    name: "Wealth Planning",
+    icon: "lni lni-investment",
+    desc: `
+    Our clients have worked for years to accumulate their current resources. For many of them, it’s no longer just about accumulating more. It’s about managing wisely. We view our role as stewards, strategists and wise managers working in partnership with our clients.    `,
+  },
+  {
+    name: "Land Sale Planning",
+    icon: "lni lni-trees",
+    desc: `
+    Our clients have worked for years to accumulate their current resources. For many of them, it’s no longer just about accumulating more. It’s about managing wisely. We view our role as stewards, strategists and wise managers working in partnership with our clients.    `,
+  },
+  {
+    name: "Charitable & Legacy Planning",
+    icon: "lni lni-grow",
+
     desc: `
     We believe every person leaves some kind of legacy in their wake whether it’s intentional or unintentional. We engage with our clients to help them be purposeful about the kind of legacy they are creating and help ensure its one they can be proud of.
     `,
   },
   {
-    name: "Impact",
-    image: legacy,
-    position: "left",
+    name: "Nonprofit Institutions",
+    icon: "lni lni-consulting",
     desc: `
     We help families gain clarity around the issues for which they would like to be a catalyst for change. Once the mission is clear, we partner with them to develop strategies for creating the specific impact they want to create.
     `,
+  },
+  {
+    name: "Family Office",
+    icon: "lni lni-home",
+    desc: `
+    Our clients have worked for years to accumulate their current resources. For many of them, it’s no longer just about accumulating more. It’s about managing wisely. We view our role as stewards, strategists and wise managers working in partnership with our clients.    `,
   },
 ];
 

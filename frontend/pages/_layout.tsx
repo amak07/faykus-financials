@@ -1,23 +1,11 @@
-import Nav from "@components/common/Nav";
-import Footer from "@components/common/Footer";
-import { faykusLinks, faykusLogin } from "@data/faykus-financial";
+import { Footer, Navbar } from "components";
 
 const Layout: React.FC = ({ children }) => {
   return (
     <>
-      <style jsx global>
-        {`
-          body {
-            background: rgb(250, 246, 239);
-          }
-        `}
-      </style>
-
-      <Nav links={faykusLinks} cta={faykusLogin} />
-
-      <main className="pt-36 sm:pt-20 w-full">{children}</main>
-
-      <Footer links={faykusLinks} />
+      <Navbar />
+      <main>{children}</main>
+      <Footer />
     </>
   );
 };

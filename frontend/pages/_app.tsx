@@ -1,12 +1,14 @@
+import "aos/dist/aos.css";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { Hydrate } from "react-query/hydration";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Layout from "./_layout";
+import AOS from "aos";
 
-function MyApp({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
   const [queryClient] = useState(
     () =>
       new QueryClient({
@@ -18,6 +20,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       })
   );
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
@@ -28,5 +34,5 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Hydrate>
     </QueryClientProvider>
   );
-}
-export default MyApp;
+};
+export default App;
