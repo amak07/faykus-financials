@@ -9,6 +9,13 @@ module.exports = {
         DEFAULT: "#FFCC00",
         light: "#fffef2",
       },
+      gold: {
+        DEFAULT: "#d1b854",
+      },
+      "cool-gray": {
+        DEFAULT: "#808c9c",
+        dark: "#6D6961",
+      },
 
       ...colors,
     },

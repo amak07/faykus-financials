@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import FaykusLogo from "public/FF-text.svg";
 
 const Navbar = () => {
   const router = useRouter();
   const [animateHeader, setAnimateHeader] = useState(false);
   const [showMenu, setShowMenu] = useState<boolean>();
+  const menuRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const listener = () =>
@@ -46,6 +47,11 @@ const Navbar = () => {
                     ? "border-b-4 border-b-sun-yellow"
                     : ""
                 }`}
+                onClick={() => {
+                  if (showMenu && menuRef) {
+                    menuRef.current?.click();
+                  }
+                }}
               >
                 {item.label}
               </a>
@@ -66,16 +72,31 @@ const Navbar = () => {
         >
           <nav className="navbar py-2 flex justify-between items-center relative pr-4">
             <div>
-              <a className="w-2/3">
-                <img src={FaykusLogo.src} alt="company logo" />
-              </a>
+              <Link href="/">
+                <a
+                  className="w-2/3"
+                  onClick={() => {
+                    if (showMenu && menuRef) {
+                      menuRef.current?.click();
+                    }
+                  }}
+                >
+                  <img src={FaykusLogo.src} alt="company logo" />
+                </a>
+              </Link>
             </div>
 
             <div className="flex-grow justify-end">
               {renderLinks("justify-center items-center hidden lg:flex")}
 
-              <label className="btn btn-circle swap swap-rotate lg:hidden btn-ghost">
-                <input type="checkbox" onClick={() => setShowMenu(!showMenu)} />
+              <label className="btn btn-circle swap swap-rotate lg:hidden btn-ghost text-slate-800">
+                <input
+                  type="checkbox"
+                  onClick={() => {
+                    setShowMenu(!showMenu);
+                  }}
+                  ref={menuRef}
+                />
 
                 <svg
                   className="swap-off fill-current"

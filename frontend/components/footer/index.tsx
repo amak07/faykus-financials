@@ -3,7 +3,7 @@ import FaykusLogo from "public/FF.svg";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center p-10 bg-sun-yellow-light text-gray-700">
+    <footer className="footer footer-center p-10 bg-sun-yellow-light text-slate-800">
       <div
         data-aos="zoom-out"
         data-aos-delay="600"
@@ -28,7 +28,7 @@ const Footer = () => {
         ].map((item) => (
           <Link href={item.href} key={item.href}>
             <a target="_blank">
-              <div className="icon text-4xl text-sun-yellow hover:text-gray-700">
+              <div className="icon text-4xl text-sun-yellow">
                 <i className={item.icon}></i>
               </div>
             </a>

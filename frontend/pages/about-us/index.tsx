@@ -1,42 +1,10 @@
 import { faykusServices } from "@data/faykus-financial";
-import Head from "next/head";
 import Typewriter from "typewriter-effect";
 
-function HomePage() {
+function AboutUsPage() {
   return (
     <>
-      <Head>
-        <title>Faykus Financial, LLC</title>
-      </Head>
-
-      <section className="h-screen w-screen bg-sun-yellow-light">
-        <div className="container mx-auto">
-          <div className="flex justify-center items-center flex-col h-screen">
-            <div
-              className="text-4xl font-bold leading-snug text-slate-800"
-              data-aos="fade-up"
-              data-aos-delay="600"
-              data-aos-duration="600"
-              data-aos-easing="ease-in"
-              data-aos-once="true"
-            >
-              <Typewriter
-                options={{
-                  strings: ["Authentic,", "Intentional,", "Tailored,"],
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
-              <span>Wealth Building.</span> <br />
-              <span className={`border-b-4 border-b-sun-yellow`}>
-                For Life.
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="w-screen bg-white">
+      <section className="w-screen bg-white pt-16">
         <div className="container mx-auto py-16 px-8 sm:px-0">
           <div className="text-left">
             <h2
@@ -47,17 +15,17 @@ function HomePage() {
               data-aos-easing="ease-in"
               data-aos-once="true"
             >
-              Our Services
+              Our Team
             </h2>
             <h2
-              className="mb-6 text-2xl text-slate-800 tracking-wider"
+              className="mb-6 text-2xl text-cool-gray tracking-wider"
               data-aos="fade-up"
               data-aos-delay="600"
               data-aos-duration="600"
               data-aos-easing="ease-in"
               data-aos-once="true"
             >
-              {`We're here to help you grow`}
+              Meet the Faykus Financial Team
             </h2>
           </div>
           <div className="flex flex-wrap">
@@ -77,7 +45,7 @@ function HomePage() {
                   </div>
                   <div>
                     <h3 className="text-2xl text-gold">{item.name}</h3>
-                    <p className="text-slate-800 font-GillSansMTPro-Book">
+                    <p className="text-cool-gray font-GillSansMTPro-Book">
                       {item.desc}
                     </p>
                   </div>
@@ -91,4 +59,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default AboutUsPage;
