@@ -2,6 +2,7 @@
 import executive from "public/corporate-executive.jpeg";
 import affluent from "public/Affluent-Families-Individuals.jpeg";
 import family from "public/Family-Business-Owners.jpeg";
+import { SectionItem } from "components/section-layout";
 
 export const faykusLinks = [
   {
@@ -31,7 +32,7 @@ export const faykusLogin = {
   route: "/client",
 };
 
-export const faykusServices = [
+export const faykusServices: SectionItem[] = [
   {
     name: "Investment Management",
     icon: "lni lni-stats-up",

@@ -1,6 +1,6 @@
 import { Footer, Navbar } from "components";
 
-const Layout: React.FC = ({ children }) => {
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <>
       <Navbar />

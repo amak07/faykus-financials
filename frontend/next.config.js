@@ -1,6 +1,6 @@
 module.exports = {
   reactStrictMode: true,
-  images: {
-    domains: ["res.cloudinary.com", "links.papareact.com", "image.tmdb.org"]
-  }
-}
+  experimental: {
+    emotion: true,
+  },
+};
