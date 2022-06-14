@@ -1,11 +1,20 @@
-import tw from "twin.macro";
+import tw, { TwStyle } from "twin.macro";
 
 const Styled: React.FC<{
-  light?: boolean;
+  gray?: boolean;
+  cream?: boolean;
   children: React.ReactNode;
-}> = ({ light, children }) => (
-  <div css={[tw`w-screen bg-white`, light && tw`bg-cool-gray-light`]}>
-    {children}
+  className?: TwStyle;
+}> = ({ gray, cream, children, className }) => (
+  <div
+    css={[
+      tw`w-screen bg-white`,
+      gray && tw`bg-cool-gray-light`,
+      cream && tw`bg-sun-yellow-light`,
+      className,
+    ]}
+  >
+    <div className="container mx-auto py-16 px-8">{children}</div>
   </div>
 );
 

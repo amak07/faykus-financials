@@ -1,11 +1,11 @@
-import tw, { styled } from "twin.macro";
+import tw, { TwStyle } from "twin.macro";
 
-const Heading = styled.h3`
-  ${tw`mb-6 text-2xl text-slate-600 tracking-wider`};
-`;
-
-export default ({ children }: { children: React.ReactNode }) => (
-  <Heading
+const Styled: React.FC<{
+  className?: TwStyle;
+  children: React.ReactNode;
+}> = ({ className, children }) => (
+  <h3
+    css={[tw`mb-6 text-2xl text-slate-600 tracking-wider`, className]}
     data-aos="fade-up"
     data-aos-delay="600"
     data-aos-duration="600"
@@ -13,5 +13,7 @@ export default ({ children }: { children: React.ReactNode }) => (
     data-aos-once="true"
   >
     {children}
-  </Heading>
+  </h3>
 );
+
+export default Styled;

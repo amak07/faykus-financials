@@ -45,15 +45,13 @@ function HomePage() {
         </div>
       </SectionLayout>
 
-      <SectionLayout light>
-        <div className="container mx-auto py-16 px-8 sm:px-0">
-          <div className="text-left">
-            <PrimaryHeading>Our Services</PrimaryHeading>
-            <SecondaryHeading>{`We're here to help you grow`}</SecondaryHeading>
-          </div>
-
-          <GridLayout items={faykusServices}></GridLayout>
+      <SectionLayout cream>
+        <div className="text-left">
+          <PrimaryHeading>Our Services</PrimaryHeading>
+          <SecondaryHeading>{`We're here to help you grow`}</SecondaryHeading>
         </div>
+
+        <GridLayout items={faykusServices}></GridLayout>
       </SectionLayout>
     </>
   );

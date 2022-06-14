@@ -25,7 +25,7 @@ const GridLayout: React.FC<Props> = ({ items }) => (
             <i className={item.icon}></i>
           </span>
           <div>
-            <h3 className="text-2xl text-gold">{item.name}</h3>
+            <h3 className="text-2xl text-gold font-medium">{item.name}</h3>
             <p className="text-slate-600 font-GillSansMTPro-Book text-lg">
               {item.desc}
             </p>
