@@ -5,9 +5,14 @@ import type { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { Hydrate } from "react-query/hydration";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "./_layout";
 import AOS from "aos";
+
+// Determines if we are running on server or in client.
+const isServerSideRendered = () => {
+  return typeof window === "undefined";
+};
 
 const App = ({ Component, pageProps }: AppProps) => {
   const [queryClient] = useState(
@@ -22,7 +27,17 @@ const App = ({ Component, pageProps }: AppProps) => {
   );
 
   useEffect(() => {
+    // inits animation library
     AOS.init();
+
+    // inits AXE
+    if (process.env.NODE_ENV !== "production" && !isServerSideRendered()) {
+      import("react-dom").then((ReactDOM) => {
+        import("@axe-core/react").then((axe) => {
+          axe.default(React, ReactDOM, 1000, {});
+        });
+      });
+    }
   }, []);
 
   return (
@@ -37,4 +52,5 @@ const App = ({ Component, pageProps }: AppProps) => {
     </QueryClientProvider>
   );
 };
+
 export default App;

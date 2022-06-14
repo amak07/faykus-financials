@@ -1,7 +1,7 @@
 import tw, { styled } from "twin.macro";
 
-const Heading = styled.div`
-  ${tw`mb-6 text-2xl text-slate-800 tracking-wider`};
+const Heading = styled.h3`
+  ${tw`mb-6 text-2xl text-slate-600 tracking-wider`};
 `;
 
 export default ({ children }: { children: React.ReactNode }) => (

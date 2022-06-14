@@ -1,14 +1,14 @@
-export interface SectionItem {
+export interface GridItem {
   name: string;
   icon: string;
   desc: string;
 }
 
 type Props = {
-  items: SectionItem[];
+  items: GridItem[];
 };
 
-const SectionLayout: React.FC<Props> = ({ items }) => (
+const GridLayout: React.FC<Props> = ({ items }) => (
   <div className="flex flex-wrap">
     {items.map((item) => (
       <div
@@ -21,12 +21,12 @@ const SectionLayout: React.FC<Props> = ({ items }) => (
         data-aos-once="true"
       >
         <div className="m-4">
-          <div className="icon text-3xl text-gold">
+          <span className="icon text-3xl text-gold">
             <i className={item.icon}></i>
-          </div>
+          </span>
           <div>
             <h3 className="text-2xl text-gold">{item.name}</h3>
-            <p className="text-slate-800 font-GillSansMTPro-Book text-lg">
+            <p className="text-slate-600 font-GillSansMTPro-Book text-lg">
               {item.desc}
             </p>
           </div>
@@ -36,4 +36,4 @@ const SectionLayout: React.FC<Props> = ({ items }) => (
   </div>
 );
 
-export default SectionLayout;
+export default GridLayout;

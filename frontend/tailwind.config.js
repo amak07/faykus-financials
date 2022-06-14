@@ -15,6 +15,7 @@ module.exports = {
       "cool-gray": {
         DEFAULT: "#808c9c",
         dark: "#6D6961",
+        light: "#e7e9f2",
       },
 
       ...colors,

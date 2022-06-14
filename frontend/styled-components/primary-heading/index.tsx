@@ -1,11 +1,11 @@
 import tw, { styled } from "twin.macro";
 
-const Heading = styled.div`
+const Styled = styled.h2`
   ${tw`text-3xl text-gold tracking-wider`};
 `;
 
 export default ({ children }: { children: React.ReactNode }) => (
-  <Heading
+  <Styled
     data-aos="fade-up"
     data-aos-delay="600"
     data-aos-duration="600"
@@ -13,5 +13,5 @@ export default ({ children }: { children: React.ReactNode }) => (
     data-aos-once="true"
   >
     {children}
-  </Heading>
+  </Styled>
 );

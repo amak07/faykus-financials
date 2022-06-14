@@ -28,6 +28,7 @@
     "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
+    "@axe-core/react": "^4.4.3",
     "@emotion/babel-plugin": "^11.9.2",
     "@graphql-codegen/cli": "^2.6.2",
     "@graphql-codegen/typescript": "^2.4.7",

@@ -42,6 +42,7 @@ const Navbar = () => {
           <li className="mx-2 my-4" key={item.label}>
             <Link href={item.href}>
               <a
+                aria-label={item.label}
                 className={`hover:border-b-4 hover:border-b-sun-yellow tracking-wider ${
                   item.href === router.pathname
                     ? "border-b-4 border-b-sun-yellow"
@@ -74,6 +75,7 @@ const Navbar = () => {
             <div>
               <Link href="/">
                 <a
+                  aria-label="go home"
                   className="w-2/3"
                   onClick={() => {
                     if (showMenu && menuRef) {
@@ -96,6 +98,8 @@ const Navbar = () => {
                     setShowMenu(!showMenu);
                   }}
                   ref={menuRef}
+                  id="menu"
+                  aria-label="menu button"
                 />
 
                 <svg
@@ -125,7 +129,7 @@ const Navbar = () => {
 
       <div className="w-full bg-transparent fixed top-20 md:top-32 z-10">
         <div
-          className={`bg-white mx-4 py-4 px-2 shadow-lg lg:hidden  ${
+          className={`bg-sun-yellow-light mx-4 py-4 px-2 shadow-lg lg:hidden  ${
             showMenu ? "" : "hidden"
           }`}
         >
