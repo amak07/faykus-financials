@@ -9,23 +9,13 @@ import {
   Button,
   IconButton,
 } from "@material-tailwind/react";
-
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-
-import {
-  HomeIcon,
-  UserCircleIcon,
-  ArrowRightOnRectangleIcon,
-  UserPlusIcon,
-  DocumentTextIcon,
-} from "@heroicons/react/24/solid";
 
 const Navbar = () => {
   const [openNav, setOpenNav] = React.useState(false);
 
   const routes = [
     {
-      icon: HomeIcon,
       name: "home",
       path: "/home",
       url: {
@@ -34,27 +24,26 @@ const Navbar = () => {
       },
     },
     {
-      icon: UserCircleIcon,
-      name: "profile",
+      name: "about us",
       path: "/profile",
     },
     {
-      icon: ArrowRightOnRectangleIcon,
-      name: "Sign In",
+      name: "Clients",
       path: "/sign-in",
     },
     {
-      icon: UserPlusIcon,
-      name: "Sign Up",
+      name: "Services",
       path: "/sign-up",
     },
     {
-      icon: DocumentTextIcon,
-      name: "Docs",
-      href: "https://www.material-tailwind.com/docs/react/installation",
-      target: "_blank",
-      element: "",
+      name: "Contact",
+      path: "/contact",
     },
+    // {
+    //   name: "Contact",
+    //   href: "https://www.material-tailwind.com/docs/react/installation",
+    //   target: "_blank",
+    // },
   ];
 
   React.useEffect(() => {
@@ -65,54 +54,33 @@ const Navbar = () => {
   }, []);
 
   const navList = (
-    <ul className="mb-4 mt-2 flex flex-col gap-2 text-inherit lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      {routes.map(({ name, path, icon, href = "", target }) => (
+    <ul className="mb-4 mt-2 -ml-6 flex flex-col gap-2 text-inherit lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+      {routes.map(({ name, path }) => (
         <Typography
           key={name}
           as="li"
           variant="small"
-          color="inherit"
+          color="black"
           className="capitalize"
         >
-          {href ? (
-            <a
-              href={href}
-              target={target}
-              className="flex items-center gap-1 p-1 font-normal"
-            >
-              {icon &&
-                React.createElement(icon, {
-                  className: "w-[18px] h-[18px] opacity-75 mr-1",
-                })}
-              {name}
-            </a>
-          ) : (
-            <Link
-              href={{
-                pathname: path,
-              }}
-              target={target}
-              className="flex items-center gap-1 p-1 font-normal"
-            >
-              {icon &&
-                React.createElement(icon, {
-                  className: "w-[18px] h-[18px] opacity-75 mr-1",
-                })}
-              {name}
-            </Link>
-          )}
+          <Link
+            href={{
+              pathname: path,
+            }}
+            className="flex items-center gap-1 p-1 font-semibold"
+          >
+            {name}
+          </Link>
         </Typography>
       ))}
     </ul>
   );
 
   return (
-    <MTNavbar color="transparent" className="p-3">
-      <div className="container mx-auto flex items-center justify-between text-white">
+    <MTNavbar color="transparent" className="p-3 pt-8 w-full max-w-full">
+      <div className="flex items-center justify-between text-white mx-4 mr-8">
         <Link href="/">
-          <Typography className="mr-4 ml-2 cursor-pointer py-1.5 font-bold">
-            Faykus Financial
-          </Typography>
+          <img alt="Card Image" src="/FFLogoText.svg" width={350} />
         </Link>
         <div className="hidden lg:block">{navList}</div>
         <div className="hidden gap-2 lg:flex">
@@ -120,13 +88,15 @@ const Navbar = () => {
             href="https://www.material-tailwind.com/blocks?ref=mtkr"
             target="_blank"
           >
-            <Button variant="text" size="sm" color="white" fullWidth>
-              pro version
+            <Button
+              variant="outlined"
+              size="sm"
+              fullWidth
+              className="border-black text-black rounded-2xl"
+            >
+              Client Login
             </Button>
           </a>
-          {/* {React.cloneElement(action, {
-            className: "hidden lg:inline-block",
-          })} */}
         </div>
         <IconButton
           variant="text"
