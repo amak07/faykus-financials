@@ -166,26 +166,4 @@ const Navbar = () => {
   );
 };
 
-// Navbar.defaultProps = {
-//   brandName: "Material Tailwind React",
-//   action: (
-//     <a
-//       href="https://www.creative-tim.com/product/material-tailwind-kit-react"
-//       target="_blank"
-//     >
-//       <Button variant="gradient" size="sm" fullWidth>
-//         free download
-//       </Button>
-//     </a>
-//   ),
-// };
-
-// Navbar.propTypes = {
-//   brandName: PropTypes.string,
-//   routes: PropTypes.arrayOf(PropTypes.object).isRequired,
-//   action: PropTypes.node,
-// };
-
-// Navbar.displayName = "/src/widgets/layout/navbar.jsx";
-
 export default Navbar;
