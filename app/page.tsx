@@ -14,13 +14,17 @@ import { featuresData } from "../data/features-data";
 import { UsersIcon } from "@heroicons/react/24/solid";
 import { FeatureCard, TeamCard } from "../widgets/cards";
 import React from "react";
-import { Footer, PageTitle } from "../widgets/layout";
+import { Footer, Navbar, PageTitle } from "../widgets/layout";
 import { contactData } from "../data/contact-data";
 import { teamData } from "../data/team-data";
 
 export default function Home() {
   return (
     <>
+      <div className="container absolute left-2/4 z-10 mx-auto -translate-x-2/4 p-4">
+        <Navbar />
+      </div>
+
       <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
         <div className="absolute top-0 h-full w-full bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')] bg-cover bg-center" />
         <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center" />

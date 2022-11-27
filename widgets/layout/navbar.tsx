@@ -1,6 +1,6 @@
 "use client";
 
-import React, { JSXElementConstructor, ReactElement } from "react";
+import React from "react";
 import Link from "next/link";
 import {
   Navbar as MTNavbar,
@@ -9,19 +9,53 @@ import {
   Button,
   IconButton,
 } from "@material-tailwind/react";
+
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-interface Props {
-  brandName: string;
-  routes: [];
-  action: ReactElement<
-    { className: string },
-    string | JSXElementConstructor<any>
-  >;
-}
+import {
+  HomeIcon,
+  UserCircleIcon,
+  ArrowRightOnRectangleIcon,
+  UserPlusIcon,
+  DocumentTextIcon,
+} from "@heroicons/react/24/solid";
 
-const Navbar: React.FC<Props> = ({ brandName, routes, action }) => {
+const Navbar = () => {
   const [openNav, setOpenNav] = React.useState(false);
+
+  const routes = [
+    {
+      icon: HomeIcon,
+      name: "home",
+      path: "/home",
+      url: {
+        pathname: "/home",
+        name: "home",
+      },
+    },
+    {
+      icon: UserCircleIcon,
+      name: "profile",
+      path: "/profile",
+    },
+    {
+      icon: ArrowRightOnRectangleIcon,
+      name: "Sign In",
+      path: "/sign-in",
+    },
+    {
+      icon: UserPlusIcon,
+      name: "Sign Up",
+      path: "/sign-up",
+    },
+    {
+      icon: DocumentTextIcon,
+      name: "Docs",
+      href: "https://www.material-tailwind.com/docs/react/installation",
+      target: "_blank",
+      element: "",
+    },
+  ];
 
   React.useEffect(() => {
     window.addEventListener(
@@ -32,7 +66,7 @@ const Navbar: React.FC<Props> = ({ brandName, routes, action }) => {
 
   const navList = (
     <ul className="mb-4 mt-2 flex flex-col gap-2 text-inherit lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      {routes.map(({ name, path, icon, href, target }) => (
+      {routes.map(({ name, path, icon, href = "", target }) => (
         <Typography
           key={name}
           as="li"
@@ -54,7 +88,9 @@ const Navbar: React.FC<Props> = ({ brandName, routes, action }) => {
             </a>
           ) : (
             <Link
-              href={path}
+              href={{
+                pathname: path,
+              }}
               target={target}
               className="flex items-center gap-1 p-1 font-normal"
             >
@@ -75,7 +111,7 @@ const Navbar: React.FC<Props> = ({ brandName, routes, action }) => {
       <div className="container mx-auto flex items-center justify-between text-white">
         <Link href="/">
           <Typography className="mr-4 ml-2 cursor-pointer py-1.5 font-bold">
-            {brandName}
+            Faykus Financial
           </Typography>
         </Link>
         <div className="hidden lg:block">{navList}</div>
@@ -88,9 +124,9 @@ const Navbar: React.FC<Props> = ({ brandName, routes, action }) => {
               pro version
             </Button>
           </a>
-          {React.cloneElement(action, {
+          {/* {React.cloneElement(action, {
             className: "hidden lg:inline-block",
-          })}
+          })} */}
         </div>
         <IconButton
           variant="text"
@@ -121,9 +157,9 @@ const Navbar: React.FC<Props> = ({ brandName, routes, action }) => {
               pro version
             </Button>
           </a>
-          {React.cloneElement(action, {
+          {/* {React.cloneElement(action, {
             className: "w-full block",
-          })}
+          })} */}
         </div>
       </MobileNav>
     </MTNavbar>
