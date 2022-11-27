@@ -1,4 +1,16 @@
-export const teamData = [
+interface Social {
+  color: string;
+  name: string;
+}
+
+export interface TeamData {
+  img: string | undefined;
+  name: string;
+  position: string;
+  socials?: Social[];
+}
+
+export const teamData: TeamData[] = [
   {
     img: "/img/team-1.jpg",
     name: "Ryan Tompson",

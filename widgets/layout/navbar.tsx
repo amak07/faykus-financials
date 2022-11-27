@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { JSXElementConstructor, ReactElement } from "react";
 import Link from "next/link";
 import {
   Navbar as MTNavbar,
@@ -11,7 +11,16 @@ import {
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-const Navbar = ({ brandName, routes, action }) => {
+interface Props {
+  brandName: string;
+  routes: [];
+  action: ReactElement<
+    { className: string },
+    string | JSXElementConstructor<any>
+  >;
+}
+
+const Navbar: React.FC<Props> = ({ brandName, routes, action }) => {
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {
@@ -45,7 +54,7 @@ const Navbar = ({ brandName, routes, action }) => {
             </a>
           ) : (
             <Link
-              to={path}
+              href={path}
               target={target}
               className="flex items-center gap-1 p-1 font-normal"
             >
@@ -64,7 +73,7 @@ const Navbar = ({ brandName, routes, action }) => {
   return (
     <MTNavbar color="transparent" className="p-3">
       <div className="container mx-auto flex items-center justify-between text-white">
-        <Link to="/">
+        <Link href="/">
           <Typography className="mr-4 ml-2 cursor-pointer py-1.5 font-bold">
             {brandName}
           </Typography>

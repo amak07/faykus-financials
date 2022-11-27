@@ -1,7 +1,7 @@
-import PropTypes from "prop-types";
 import { Card, Avatar, Typography } from "@material-tailwind/react";
+import { TeamData } from "../../data/team-data";
 
-export function TeamCard({ img, name, position, socials }) {
+const TeamCard: React.FC<TeamData> = ({ img, name, position, socials }) => {
   return (
     <Card color="transparent" shadow={false} className="text-center">
       <Avatar
@@ -18,9 +18,9 @@ export function TeamCard({ img, name, position, socials }) {
           {position}
         </Typography>
       )}
-      {socials && <div className="mx-auto mt-5">{socials}</div>}
+      {/* {socials && <div className="mx-auto mt-5">{socials}</div>} */}
     </Card>
   );
-}
+};
 
 export default TeamCard;

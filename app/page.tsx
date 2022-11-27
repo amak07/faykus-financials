@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import styles from "./page.module.css";
 import {
   Card,
   CardBody,
@@ -14,10 +12,11 @@ import {
 } from "@material-tailwind/react";
 import { featuresData } from "../data/features-data";
 import { UsersIcon } from "@heroicons/react/24/solid";
-import { FeatureCard } from "../widgets/cards";
+import { FeatureCard, TeamCard } from "../widgets/cards";
 import React from "react";
 import { Footer, PageTitle } from "../widgets/layout";
 import { contactData } from "../data/contact-data";
+import { teamData } from "../data/team-data";
 
 export default function Home() {
   return (
@@ -121,23 +120,23 @@ export default function Home() {
             maximum.
           </PageTitle>
           <div className="mt-24 grid grid-cols-1 gap-12 gap-x-24 md:grid-cols-2 xl:grid-cols-4">
-            {/* {teamData.map(({ img, name, position, socials }) => (
+            {teamData.map(({ img, name, position, socials }) => (
               <TeamCard
                 key={name}
                 img={img}
                 name={name}
                 position={position}
-                socials={
-                  <div className="flex items-center gap-2">
-                    {socials.map(({ color, name }) => (
-                      <IconButton key={name} color={color} variant="text">
-                        <i className={`fa-brands text-lg fa-${name}`} />
-                      </IconButton>
-                    ))}
-                  </div>
-                }
+                // socials={
+                //   <div className="flex items-center gap-2">
+                //     {socials.map(({ color, name }) => (
+                //       <IconButton key={name} color={color} variant="text">
+                //         <i className={`fa-brands text-lg fa-${name}`} />
+                //       </IconButton>
+                //     ))}
+                //   </div>
+                // }
               />
-            ))} */}
+            ))}
           </div>
         </div>
       </section>

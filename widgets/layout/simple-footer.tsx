@@ -1,7 +1,13 @@
 import { Typography } from "@material-tailwind/react";
 import { HeartIcon } from "@heroicons/react/24/solid";
 
-const SimpleFooter = ({ brandName, brandLink, routes }) => {
+interface Props {
+  brandName: string;
+  brandLink: string;
+  routes: [];
+}
+
+const SimpleFooter: React.FC<Props> = ({ brandName, brandLink, routes }) => {
   const year = new Date().getFullYear();
 
   return (
