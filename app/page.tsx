@@ -1,54 +1,79 @@
 "use client";
 
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Typography,
-  Button,
-  IconButton,
-  Input,
-  Textarea,
-} from "@material-tailwind/react";
-import { featuresData } from "../data/features-data";
-import { UsersIcon } from "@heroicons/react/24/solid";
-import { FeatureCard, TeamCard } from "../widgets/cards";
 import React from "react";
-import { Footer, Navbar, PageTitle } from "../widgets/layout";
-import { contactData } from "../data/contact-data";
-import { teamData } from "../data/team-data";
+import { Roboto_Slab, Nunito } from "@next/font/google";
+import Image from "next/image";
+
+import HeroAustinBridge from "../public/hero_austin_bridge.png";
+import HeroAustinBridgeM from "../public/hero_austin_bridge_mobile.svg";
+import { Navbar } from "../widgets/layout";
+
+const roboto_slab = Roboto_Slab({
+  subsets: ["latin"],
+  variable: "--font-roboto-slab",
+});
+
+const nunito = Nunito({
+  subsets: ["latin"],
+  variable: "--font-nunito",
+});
 
 export default function Home() {
   return (
-    <>
-      <div className="absolute z-10 bg-white w-full max-w-full">
-        <Navbar />
+    <div className={`${roboto_slab.className} `}>
+      <Navbar />
+
+      <div className="relative content-center items-center justify-center hidden lg:flex">
+        <Image
+          src={HeroAustinBridge}
+          className="w-full bg-cover bg-center"
+          alt="austin bridge 360"
+        />
       </div>
 
-      <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
-        <div className="absolute top-0 h-full w-full bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')] bg-cover bg-center" />
-        <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center" />
-        <div className="max-w-8xl container relative mx-auto">
-          <div className="flex flex-wrap items-center">
-            <div className="ml-auto mr-auto w-full px-4 text-center lg:w-8/12">
-              <Typography
-                variant="h1"
-                color="white"
-                className="mb-6 font-black"
-              >
-                Your story starts with us.
-              </Typography>
-              <Typography variant="lead" color="white" className="opacity-80">
-                This is a simple example of a Landing Page you can build using
-                Material Tailwind. It features multiple components based on the
-                Tailwind CSS and Material Design by Google.
-              </Typography>
-            </div>
+      <div className="container mx-auto mb-20">
+        <div className="flex flex-col text-center w-full justify-center items-center">
+          <div style={{ width: 1017 }}>
+            <h2
+              className={`text-2xl ${nunito.className} font-normal text-dark-gray`}
+            >
+              WHAT WE'RE ALL ABOUT
+            </h2>
+            <h1 className="text-4xl font-normal text-gray mt-9 mb-14">
+              We belive the responsibility to manage a client's family wealth
+              represents a sacred trust they place in us.
+            </h1>
+            <p className={`text-2xl ${nunito.className} font-normal text-gray`}>
+              We help our clients grow their wealth with intention, and magnify
+              their gifts, talents and resources to impact the mission they are
+              called to serve.
+            </p>
           </div>
         </div>
       </div>
 
-      <section className="-mt-32 bg-gray-50 px-4 pb-20 pt-4">
+      <div className="container mx-auto mb-20">
+        <div className="flex flex-col text-center w-full justify-center items-center">
+          <div style={{ width: 1017 }}>
+            <h2
+              className={`text-2xl ${nunito.className} font-normal text-dark-gray`}
+            >
+              WHAT WE'RE ALL ABOUT
+            </h2>
+            <h1 className="text-4xl font-normal text-gray mt-9 mb-14">
+              We belive the responsibility to manage a client's family wealth
+              represents a sacred trust they place in us.
+            </h1>
+            <p className={`text-2xl ${nunito.className} font-normal text-gray`}>
+              We help our clients grow their wealth with intention, and magnify
+              their gifts, talents and resources to impact the mission they are
+              called to serve.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* <section className="-mt-32 bg-gray-50 px-4 pb-20 pt-4">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featuresData.map(({ color, title, icon, description }) => (
@@ -192,7 +217,7 @@ export default function Home() {
 
       <div className="bg-blue-gray-50/50">
         <Footer />
-      </div>
-    </>
+      </div> */}
+    </div>
   );
 }
