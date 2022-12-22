@@ -2,9 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Roboto+Slab&display=swap");
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Roboto Slab";
+}
+
+.faykus-list li {
+  font-size: 32px;
+}
+
+.faykus-list li:before {
+  content: "";
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  background-image: url("../public/SunburstPattern.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 1.3em;
 }

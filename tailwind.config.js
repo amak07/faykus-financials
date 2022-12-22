@@ -1,5 +1,4 @@
 const withMT = require("@material-tailwind/react/utils/withMT");
-const { fontFamily } = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = withMT({
@@ -16,7 +15,23 @@ module.exports = withMT({
         "dark-gray": "#3D3D3D",
         "sun-yellow": "#FBC218",
       },
+      letterSpacing: {
+        "h2": ".21em"
+      },
+      fontFamily: {
+        nunito: ['Nunito', 'sans-serif'],
+        roboto_slab: ['Roboto Slab', 'serif']
+      }
     },
+    fontSize: {
+      heading1: ['38px', '50px'],
+      heading2: ['24px', '33px'],
+      heading4: ['30px', '40px'],
+      paragraph: ['24px', '33px']
+    }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('daisyui'),
+  ],
 });

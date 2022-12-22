@@ -2,9 +2,12 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { IconButton } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import AppButton from "../components/button";
+import FFLogoText from "../../public/FFLogoText.svg";
 
 const Navbar = () => {
   const [openNav, setOpenNav] = React.useState(false);
@@ -37,40 +40,40 @@ const Navbar = () => {
     <header className="text-gray-600 body-font">
       <div className="flex flex-wrap p-5 items-center flex-row">
         <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-          <img
-            alt="Card Image"
-            src="/FFLogoText.svg"
+          <Image
+            src={FFLogoText}
+            alt="faykus financial logo"
             width={317}
             height={88}
             className="hidden xl:inline"
           />
-          <img
+
+          {/* <img
             alt="Card Image"
             src="/FFLogoText_Mobile.svg"
             width={231}
             height={64}
             className="inline xl:hidden"
-          />
+          /> */}
         </a>
         <nav className="md:ml-auto flex-wrap items-center text-base justify-center hidden xl:flex">
           {routes?.map((item) => (
             <Link
               key={item?.path}
               href={item?.path}
-              className={`mr-11 text-gray text-xl ${
+              className={`mr-11 text-gray ${
                 pathname === item?.path
                   ? "font-semibold underline decoration-4 decoration-sun-yellow underline-offset-8"
                   : "font-normal hover:underline hover:decoration-sun-yellow hover:decoration-4 hover:underline-offset-8"
               }`}
+              style={{ fontSize: 24 }}
             >
               {item?.name}
             </Link>
           ))}
         </nav>
 
-        <button className="text-gray border-gray bg-transparent py-2 px-4 border hover:bg-gray hover:border-gray hover:text-white rounded-3xl text-xl font-normal hidden xl:inline-block">
-          Client Login
-        </button>
+        <AppButton variant="SMALL">Client Login</AppButton>
 
         <IconButton
           variant="text"
