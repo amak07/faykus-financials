@@ -14,6 +14,8 @@ module.exports = withMT({
         gray: "#3C4959",
         "dark-gray": "#3D3D3D",
         "sun-yellow": "#FBC218",
+        "light-yellow": "#fef3d1",
+        "light-blue": "#d9eefa"
       },
       letterSpacing: {
         "h2": ".21em"
