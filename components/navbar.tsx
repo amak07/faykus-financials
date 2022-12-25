@@ -6,11 +6,11 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { IconButton } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import AppButton from "../components/button";
-import FFLogoText from "../../public/FFLogoText.svg";
+import AppButton from "./button";
+import FFLogoText from "../public/FFLogoText.svg";
 
 const Navbar = () => {
-  const [openNav, setOpenNav] = React.useState(false);
+  // const [openNav, setOpenNav] = React.useState(false);
   const pathname = usePathname();
 
   const routes = [
@@ -37,7 +37,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="text-gray-600 body-font">
+    <header className="text-gray-600 body-font not-prose">
       <div className="flex flex-wrap p-5 items-center flex-row">
         <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
           <Image
@@ -80,13 +80,15 @@ const Navbar = () => {
           size="lg"
           color="white"
           className="ml-auto text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent xl:hidden border-gray border-2"
-          onClick={() => setOpenNav(!openNav)}
+          // onClick={() => setOpenNav(!openNav)}
         >
-          {openNav ? (
+          {/* {openNav ? (
             <XMarkIcon strokeWidth={2} className="h-6 w-6" />
           ) : (
             <Bars3Icon strokeWidth={2} className="h-6 w-6" />
-          )}
+          )} */}
+
+          <Bars3Icon strokeWidth={2} className="h-6 w-6" />
         </IconButton>
       </div>
     </header>

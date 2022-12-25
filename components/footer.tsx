@@ -88,12 +88,7 @@ const Footer = () => {
             </Typography>
             <div className="mx-auto mt-6 mb-8 flex justify-center gap-2 md:mb-0 lg:justify-start">
               {socials.map(({ color, name, path }) => (
-                <a
-                  key={name}
-                  href={path}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a key={name} href={path} target="_blank" rel="noreferrer">
                   <IconButton color="white" className="rounded-full">
                     <Typography color={color}>
                       <i className={`fa-brands fa-${name}`} />
@@ -146,6 +141,7 @@ const Footer = () => {
                   href="https://www.creative-tim.com?ref=mtk"
                   target="_blank"
                   className="text-blue-gray-500 transition-colors hover:text-blue-500"
+                  rel="noreferrer"
                 >
                   Creative Tim
                 </a>
