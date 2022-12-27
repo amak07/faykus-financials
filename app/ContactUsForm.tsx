@@ -1,8 +1,8 @@
-const inputClass = `input input-bordered w-full border-gray focus:outline-sun-yellow focus:border-sun-yellow`;
-const areaClass = `textarea textarea-bordered w-full border-gray focus:outline-sun-yellow focus:border-sun-yellow`;
+import Image from "next/image";
+import Send from "../public/icons/Send.svg";
 
 const ContactUsForm = () => (
-  <section className="relative">
+  <section className="relative mb-44 z-10">
     <div className="container mx-auto">
       <div className="flex flex-col text-center w-full mb-12">
         <h1>Ready to answer your calling?</h1>
@@ -12,7 +12,8 @@ const ContactUsForm = () => (
           24 hours.
         </p>
       </div>
-      <div className="mx-auto">
+
+      <div className="mx-auto mb-20">
         <div className="flex flex-wrap -m-2">
           <div className="p-2 w-1/2">
             <div className="relative">
@@ -21,7 +22,7 @@ const ContactUsForm = () => (
                 name="first_name"
                 type="text"
                 placeholder="First name"
-                className={inputClass}
+                className="app-input"
               />
             </div>
           </div>
@@ -32,7 +33,7 @@ const ContactUsForm = () => (
                 id="last_name"
                 name="last_name"
                 placeholder="Last name"
-                className={inputClass}
+                className="app-input"
               />
             </div>
           </div>
@@ -43,7 +44,7 @@ const ContactUsForm = () => (
                 id="email"
                 name="email"
                 placeholder="Email address"
-                className={inputClass}
+                className="app-input"
               />
             </div>
           </div>
@@ -53,13 +54,24 @@ const ContactUsForm = () => (
                 id="message"
                 name="message"
                 placeholder="Message"
-                className={areaClass}
+                className="app-textarea"
                 rows={4}
-                style={{ fontSize: 16 }}
               ></textarea>
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="flex justify-center items-center">
+        <button className="app-icon-button">
+          <Image src={Send} alt="contact us submit form" />
+          <span
+            className="font-roboto_slab font-medium capitalize"
+            style={{ fontSize: 38 }}
+          >
+            Submit
+          </span>
+        </button>
       </div>
     </div>
   </section>

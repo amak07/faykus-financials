@@ -1,7 +1,7 @@
-const withMT = require("@material-tailwind/react/utils/withMT");
 
 /** @type {import('tailwindcss').Config} */
-module.exports = withMT({
+module.exports = {
+  darkMode: 'class',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -28,12 +28,14 @@ module.exports = withMT({
     fontSize: {
       heading1: ['38px', '50px'],
       heading2: ['24px', '33px'],
+      heading3: ['28px', '53px'],
       heading4: ['30px', '40px'],
-      paragraph: ['24px', '33px']
+      paragraph: ['24px', '33px'],
+      "footer-span": ['20px', '27px'],
     }
   },
   plugins: [
     require('@tailwindcss/typography'),
     require('daisyui'),
   ],
-});
+};

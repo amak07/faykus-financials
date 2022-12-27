@@ -6,7 +6,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { IconButton } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import AppButton from "./button";
 import FFLogoText from "../public/FFLogoText.svg";
 
 const Navbar = () => {
@@ -37,8 +36,8 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="text-gray-600 body-font not-prose">
-      <div className="flex flex-wrap p-5 items-center flex-row">
+    <header className="not-prose">
+      <div className="flex flex-wrap p-5 items-center flex-row bg-white">
         <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
           <Image
             src={FFLogoText}
@@ -73,7 +72,7 @@ const Navbar = () => {
           ))}
         </nav>
 
-        <AppButton variant="SMALL">Client Login</AppButton>
+        <button className="app-button">Client Login</button>
 
         <IconButton
           variant="text"

@@ -10,17 +10,40 @@ body {
   margin: 0;
 }
 
-.faykus-list li {
-  font-size: 32px;
+::selection {
+  background: #b4d5fe !important;
 }
 
-.faykus-list li:before {
-  content: "";
-  display: inline-block;
-  height: 1em;
-  width: 1em;
-  background-image: url("../public/icons/SunburstPattern.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  padding-left: 1.3em;
+@layer components {
+  .app-input {
+    @apply input input-bordered w-full border-gray focus:outline-sun-yellow focus:border-sun-yellow bg-white text-dark-gray;
+  }
+
+  .app-textarea {
+    @apply textarea textarea-bordered w-full border-gray focus:outline-sun-yellow focus:border-sun-yellow bg-white text-dark-gray;
+  }
+
+  .app-icon-button {
+    @apply btn btn-lg gap-2 rounded-full bg-sun-yellow text-white border-sun-yellow outline-sun-yellow hover:bg-gray;
+  }
+
+  .app-button {
+    @apply btn btn-lg capitalize text-gray border-gray bg-transparent py-2 px-4 border hover:bg-gray hover:border-gray hover:text-white font-normal hidden xl:inline-block;
+  }
+}
+
+.app-textarea {
+  font-size: 16px;
+}
+
+.app-button {
+  font-size: 27px;
+  border-radius: 32px;
+}
+
+.footer-box-shadow {
+  box-shadow: 0px -27px 107px rgba(0, 0, 0, 0.07),
+    0px -8.13971px 32.2574px rgba(0, 0, 0, 0.0456112),
+    0px -3.38082px 13.3981px rgba(0, 0, 0, 0.035),
+    0px -1.22278px 4.84582px rgba(0, 0, 0, 0.0243888);
 }

@@ -1,13 +1,20 @@
 import Image from "next/image";
 import HeroAustinBridge from "../public/hero_austin_bridge.png";
+import BuildingWealthIntentionally from "../public/building_wealth_intentionally.svg";
 
 export const Hero = () => (
   <>
     <div className="relative content-center items-center justify-center hidden lg:flex">
       <Image
         src={HeroAustinBridge}
-        className="w-full bg-cover bg-center"
+        className="w-full bg-cover bg-center z-0"
         alt="austin bridge 360"
+      />
+
+      <Image
+        src={BuildingWealthIntentionally}
+        className="absolute z-10 right-0 lg:max-w-6xl"
+        alt="building wealth intentionally"
       />
     </div>
 

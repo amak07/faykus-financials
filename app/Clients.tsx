@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { AppButton } from "../components";
 import ClientGroup from "../public/client_group.svg";
 
 const Clients = () => (
@@ -14,7 +13,7 @@ const Clients = () => (
             from great financial success to significance & lasting impact.
           </h1>
 
-          <AppButton variant="SMALL">Learn more about our clients</AppButton>
+          <button className="app-button">Learn more about our clients</button>
         </div>
 
         <Image
