@@ -2,20 +2,26 @@ import Image from "next/image";
 import Send from "../public/icons/Send.svg";
 
 const ContactUsForm = () => (
-  <section className="relative mb-44 z-10">
+  <section className="relative mb-36 md:mb-44">
     <div className="container mx-auto">
       <div className="flex flex-col text-center w-full mb-12">
         <h1>Ready to answer your calling?</h1>
-        <p className="whitespace-pre-line m-0">
+        <p className="whitespace-pre-line m-0 hidden md:block">
           Please provide some brief information using the form on this page and
           a {"\n"} member of our advisory team will be in touch with you within
           24 hours.
         </p>
+
+        <p className="whitespace-pre-line m-0 md:hidden block">
+          Please provide some brief information {"\n"} using the form on this
+          page and a {"\n"} member of our advisory team will be {"\n"} in touch
+          with you within 24 hours.
+        </p>
       </div>
 
       <div className="mx-auto mb-20">
-        <div className="flex flex-wrap -m-2">
-          <div className="p-2 w-1/2">
+        <div className="flex flex-wrap m-4">
+          <div className="p-2 w-full md:w-1/2">
             <div className="relative">
               <input
                 id="first_name"
@@ -26,7 +32,7 @@ const ContactUsForm = () => (
               />
             </div>
           </div>
-          <div className="p-2 w-1/2">
+          <div className="p-2 w-full md:w-1/2">
             <div className="relative">
               <input
                 type="email"
@@ -64,11 +70,8 @@ const ContactUsForm = () => (
 
       <div className="flex justify-center items-center">
         <button className="app-icon-button">
-          <Image src={Send} alt="contact us submit form" />
-          <span
-            className="font-roboto_slab font-medium capitalize"
-            style={{ fontSize: 38 }}
-          >
+          <Image src={Send} alt="contact us submit form" className="m-0" />
+          <span className="font-roboto_slab font-medium capitalize text-icon-btn-heading_M md:text-icon-btn-heading">
             Submit
           </span>
         </button>

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import HeroAustinBridge from "../public/hero_austin_bridge.png";
 import BuildingWealthIntentionally from "../public/building_wealth_intentionally.svg";
+import HeroAustinBridgeMobile from "../public/hero_austin_bridge_mobile.svg";
+import BuildingWealthIntentionallyMobile from "../public/building_wealth_intentionally_mobile.svg";
 
 export const Hero = () => (
   <>
@@ -18,17 +20,42 @@ export const Hero = () => (
       />
     </div>
 
-    <div className="container mx-auto" style={{ marginBottom: 85 }}>
+    <div className="relative md:hidden">
+      <Image
+        src={HeroAustinBridgeMobile}
+        className="w-full h-full bg-cover bg-center z-0 not-prose mt-1"
+        alt="austin bridge 360"
+      />
+
+      <Image
+        src={BuildingWealthIntentionallyMobile}
+        className="absolute right-0 top-52"
+        alt="building wealth intentionally"
+      />
+    </div>
+
+    <div className="container mx-auto mb-20 relative -mt-72 md:-mt-0">
       <div className="flex flex-col text-center justify-center items-center">
         <h2 className="mt-0">What we're all about</h2>
-        <h1 className="whitespace-pre-line">
+
+        <h1 className="whitespace-pre-line hidden md:block">
           We believe the responsibility to manage a client's family {"\n"}
           wealth represents a sacred trust they place in us.
         </h1>
-        <p className="whitespace-pre-line">
+        <p className="whitespace-pre-line hidden md:block">
           We help our clients grow their wealth with intention, and magnify
           their gifts, {"\n"} talents and resources to impact the mission they
           are called to serve.
+        </p>
+
+        <h1 className="whitespace-pre-line md:hidden block">
+          We believe the responsibility to {"\n"} manage a client's family
+          wealth {"\n"} represents a sacred trust {"\n"} they place in us.
+        </h1>
+        <p className="whitespace-pre-line md:hidden block">
+          We help our clients grow their wealth {"\n"} with intention, and
+          magnify their gifts, {"\n"} talents and resources to impact the {"\n"}{" "}
+          mission they are called to serve.
         </p>
       </div>
     </div>
@@ -36,12 +63,10 @@ export const Hero = () => (
     <section>
       <div className="container px-5 pl-7 mx-auto">
         <div className="text-center">
-          <h2 className="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">
-            What we value
-          </h2>
+          <h2 className="prose-h2:mb-4">What we value</h2>
         </div>
 
-        <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+        <div className="flex flex-wrap lg:w-4/5 md:mx-auto md:mb-2 -mx-2 -mt-3 md:-mt-0">
           {[
             "Servant leadership",
             "Integrity",
@@ -50,8 +75,8 @@ export const Hero = () => (
             "Lifelong learning",
             "Positivity & fun",
           ].map((value) => (
-            <div className="p-2 sm:w-1/2 w-full" key={value}>
-              <div className="bg-gray-100 rounded flex p-4 h-full items-center">
+            <div className="p-0 md:p-2 sm:w-1/2 w-full" key={value}>
+              <div className="rounded flex p-4 h-full items-center">
                 <svg
                   width={31}
                   height={32}
@@ -76,10 +101,7 @@ export const Hero = () => (
                     </clipPath>
                   </defs>
                 </svg>
-                <span
-                  className="font-roboto_slab font-normal ml-2 text-dark-gray"
-                  style={{ fontSize: 33 }}
-                >
+                <span className="font-roboto_slab font-normal ml-5 text-dark-gray text-li_M md:text-li">
                   {value}
                 </span>
               </div>

@@ -28,7 +28,7 @@ body {
   }
 
   .app-button {
-    @apply btn btn-lg capitalize text-gray border-gray bg-transparent py-2 px-4 border hover:bg-gray hover:border-gray hover:text-white font-normal hidden xl:inline-block;
+    @apply btn btn-lg capitalize text-gray border-gray bg-transparent py-2 px-4 border hover:bg-gray hover:border-gray hover:text-white font-normal;
   }
 }
 
