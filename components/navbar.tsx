@@ -1,34 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
+
 import FFLogoText from "../public/FFLogoText.svg";
+import { routes } from "../data/navigation-data";
 
 const Navbar = () => {
-  const pathname = usePathname();
-
-  const routes = [
-    {
-      name: "Home",
-      path: "/",
-    },
-    {
-      name: "About Us",
-      path: "/profile",
-    },
-    {
-      name: "Clients",
-      path: "/sign-in",
-    },
-    {
-      name: "Services",
-      path: "/sign-up",
-    },
-    {
-      name: "Contact",
-      path: "/contact",
-    },
-  ];
+  const router = useRouter();
 
   return (
     <header className="not-prose bg-white">
@@ -48,7 +27,7 @@ const Navbar = () => {
               key={item?.path}
               href={item?.path}
               className={`mr-11 text-gray ${
-                pathname === item?.path
+                router.pathname === item?.path
                   ? "font-semibold underline decoration-4 decoration-sun-yellow underline-offset-8"
                   : "font-normal hover:underline hover:decoration-sun-yellow hover:decoration-4 hover:underline-offset-8"
               }`}

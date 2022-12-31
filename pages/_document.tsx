@@ -3,10 +3,12 @@ import { Html, Head, Main, NextScript } from "next/document";
 export default function Document() {
   return (
     <Html>
-      <Head></Head>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body
         className={`
-      prose max-w-none
+      prose max-w-none bg-white
       prose-h1:text-heading1_M md:prose-h1:text-heading1 prose-h1:font-normal prose-h1:text-gray prose-h1:font-roboto_slab
       prose-h2:text-heading2_M md:prose-h2:text-heading2 prose-h2:font-normal prose-h2:text-dark-gray prose-h2:font-nunito prose-h2:uppercase prose-h2:tracking-h2 prose-h2:mb-7 md:prose-h2:mb-9
       prose-h3:text-heading3_M md:prose-h3:text-heading3 prose-h3:font-normal prose-h3:text-gray prose-h3:font-roboto_slab

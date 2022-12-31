@@ -5,7 +5,7 @@ import Send from "../public/icons/Send.svg";
 
 const Footer = () => {
   return (
-    <section className="relative footer-box-shadow">
+    <section className="relative footer-box-shadow bg-white">
       <div className="flex flex-col">
         <footer className="footer p-10 bg-white z-10">
           <div className="flex w-full h-full justify-center items-center">

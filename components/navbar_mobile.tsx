@@ -1,36 +1,13 @@
 import React from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import FFLogoTextMobile from "../public/FFLogoText_Mobile.svg";
+import FFLogoTextMobile from "../public/FFLogoText.svg";
 import Hamburger from "../public/icons/Hamburger.svg";
 import useScrollPosition from "../hooks/useScrollPosition";
 
 const Navbar = () => {
   const scrollPos = useScrollPosition();
   const pathname = usePathname();
-
-  const routes = [
-    {
-      name: "Home",
-      path: "/",
-    },
-    {
-      name: "About Us",
-      path: "/profile",
-    },
-    {
-      name: "Clients",
-      path: "/sign-in",
-    },
-    {
-      name: "Services",
-      path: "/sign-up",
-    },
-    {
-      name: "Contact",
-      path: "/contact",
-    },
-  ];
 
   return (
     <header
