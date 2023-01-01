@@ -10,7 +10,8 @@ const Clients = () => (
 
           <h1 className="md:text-left text-center mx-8 md:mx-0">
             We work with successful families who desire to make the transition
-            from great financial success to significance & lasting impact.
+            from great financial success to{" "}
+            <mark>significance & lasting impact.</mark>
           </h1>
 
           <div className="flex justify-center md:block mt-12 md:mt-0">

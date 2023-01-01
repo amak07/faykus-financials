@@ -40,7 +40,7 @@ export const Hero = () => (
 
         <h1 className="whitespace-pre-line hidden md:block">
           We believe the responsibility to manage a client's family {"\n"}
-          wealth represents a sacred trust they place in us.
+          wealth <mark>represents a sacred trust</mark> they place in us.
         </h1>
         <p className="whitespace-pre-line hidden md:block">
           We help our clients grow their wealth with intention, and magnify
@@ -50,7 +50,8 @@ export const Hero = () => (
 
         <h1 className="whitespace-pre-line md:hidden block">
           We believe the responsibility to {"\n"} manage a client's family
-          wealth {"\n"} represents a sacred trust {"\n"} they place in us.
+          wealth {"\n"} <mark>represents a sacred trust</mark> {"\n"} they place
+          in us.
         </h1>
         <p className="whitespace-pre-line md:hidden block">
           We help our clients grow their wealth {"\n"} with intention, and
