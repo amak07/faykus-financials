@@ -21,7 +21,7 @@ const Navbar = () => {
           />
         </a>
 
-        <nav className="items-center text-base justify-center flex-wrap">
+        <nav className="items-center text-base justify-center flex-wrap bg-white">
           {routes?.map((item) => (
             <Link
               key={item?.path}

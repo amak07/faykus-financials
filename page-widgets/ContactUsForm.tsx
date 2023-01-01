@@ -2,7 +2,7 @@ import Image from "next/image";
 import Send from "../public/icons/Send.svg";
 
 const ContactUsForm = () => (
-  <section className="relative mb-36 md:mb-44">
+  <section className="relative mb-36">
     <div className="container mx-auto">
       <div className="flex flex-col text-center w-full mb-12">
         <h1>Ready to answer your calling?</h1>
