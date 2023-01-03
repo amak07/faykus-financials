@@ -10,7 +10,7 @@ const Navbar = () => {
   const router = useRouter();
 
   return (
-    <header className="not-prose bg-white">
+    <header className="not-prose bg-white navbar-box-shadow z-10 relative">
       <div className="flex flex-wrap p-5 items-center flex-row justify-between">
         <a>
           <Image

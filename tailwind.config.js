@@ -39,7 +39,13 @@ module.exports = {
       "footer-span": ['20px', '27px'],
       "footer-span_M": ['14px', '19px'],
       "icon-btn-heading": ['38px'],
-      "icon-btn-heading_M": ['28px']
+      "icon-btn-heading_M": ['28px'],
+      "about-us-name": ['28px', '46px'],
+      "about-us-title": ['38px', '62.47px'],
+      'about-us-tags': ['18px', '24.55px']
+    },
+    backgroundImage: {
+      'about_us_hero': "url('../public/about_us_hero_image.png')",
     }
   },
   plugins: [
