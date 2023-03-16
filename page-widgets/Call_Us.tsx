@@ -13,9 +13,9 @@ const CallUs = () => (
             className="absolute"
             style={{ top: -22, left: -147 }}
           />
-          <h2>Get in Touch</h2>
+          <h2>Start Today</h2>
           <h1 className="whitespace-pre-line">
-            Schedule a consultation {`\n`} with an advisor
+            Schedule a consultation {`\n`} with an advisor.
           </h1>
         </div>
 

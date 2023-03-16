@@ -20,10 +20,15 @@ const Footer = () => {
               info@faykusfinancial.com
             </span>
             <span className="whitespace-pre-line text-paragraph_M md:text-paragraph font-nunito font-normal text-gray text-center md:text-left">
+              <span className="font-roboto_slab font-medium">Primary: </span>
               13809 Research Blvd. Ste. 537 {"\n"} Austin, TX 78750
             </span>
+            <span className="whitespace-pre-line text-paragraph_M md:text-paragraph font-nunito font-normal text-gray text-center md:text-left">
+              <span className="font-roboto_slab font-medium">Secondary: </span>
+              1100 CR 418 {"\n"} Taylor, TX 76574
+            </span>
           </div>
-          <div className="flex flex-col justify-center items-center md:items-start">
+          {/* <div className="flex flex-col justify-center items-center md:items-start">
             <h3 className="mt-4 md:mt-0">Subscribe to our newsletter</h3>
             <div className="form-control w-80">
               <div className="relative justify-center items-center md:items-start flex flex-col">
@@ -49,18 +54,16 @@ const Footer = () => {
                 </button>
               </div>
             </div>
-          </div>
+          </div> */}
         </footer>
 
         <div className="pt-4 md:pt-0 bg-gray h-28 text-white flex flex-col md:flex-row text-center md:text-left justify-around w-full font-nunito font-normal items-center z-10">
           <div>
             <span className="text-footer-span hidden md:block">
-              Investment Advisory services offered by Faykus Financial, LLC, a
-              registered investment advisor.
+              Faykus Financial, LLC, a registered investment advisor.
             </span>
             <span className="text-footer-span_M block md:hidden whitespace-pre-line">
-              Investment Advisory services offered by Faykus {"\n"} Financial,
-              LLC, a registered investment advisor.
+              Faykus {"\n"} Financial, LLC, a registered investment advisor.
             </span>
           </div>
           <div>

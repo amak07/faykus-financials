@@ -39,13 +39,12 @@ export const Hero = () => (
         <h2 className="mt-0">What we're all about</h2>
 
         <h1 className="whitespace-pre-line hidden md:block">
-          We believe the responsibility to manage a client's family {"\n"}
-          wealth <mark>represents a sacred trust</mark> they place in us.
+          We help our clients grow their <mark>wealth with intention</mark> and
+          {"\n"}to magnify their gifts, talents and resources to impact
+          {"\n"} the mission they are called to serve.
         </h1>
         <p className="whitespace-pre-line hidden md:block">
-          We help our clients grow their wealth with intention, and magnify
-          their gifts, {"\n"} talents and resources to impact the mission they
-          are called to serve.
+          Fractional family office, holistic, transformative, disruption
         </p>
 
         <h1 className="whitespace-pre-line md:hidden block">
@@ -76,8 +75,11 @@ export const Hero = () => (
             "Lifelong learning",
             "Positivity & fun",
           ].map((value) => (
-            <div className="p-0 md:p-2 sm:w-1/2 w-full" key={value}>
-              <div className="rounded flex p-4 h-full items-center">
+            <div
+              className="p-0 md:p-2 sm:w-1/2 w-full flex justify-around"
+              key={value}
+            >
+              <div className="rounded flex p-4 items-center">
                 <svg
                   width={31}
                   height={32}

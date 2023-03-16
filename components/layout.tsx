@@ -1,10 +1,11 @@
 import Navbar from "./navbar";
 import Footer from "./footer";
 import { MobileNavbar } from ".";
+import TypographyLoader from "./typography-loader";
 
 export default function Layout({ children }) {
   return (
-    <>
+    <TypographyLoader>
       <div className="hidden md:block">
         <Navbar />
       </div>
@@ -13,6 +14,6 @@ export default function Layout({ children }) {
       </div>
       <main>{children}</main>
       <Footer />
-    </>
+    </TypographyLoader>
   );
 }

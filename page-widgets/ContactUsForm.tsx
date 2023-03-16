@@ -5,7 +5,7 @@ const ContactUsForm = () => (
   <section className="relative mb-36">
     <div className="container mx-auto">
       <div className="flex flex-col text-center w-full mb-12">
-        <h1>Ready to answer your calling?</h1>
+        <h1>Transform Your Success Into Intelligence</h1>
         <p className="whitespace-pre-line m-0 hidden md:block">
           Please provide some brief information using the form on this page and
           a {"\n"} member of our advisory team will be in touch with you within
