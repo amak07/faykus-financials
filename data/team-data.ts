@@ -71,9 +71,15 @@ export const TeamMembers = [
     title: "Certified Financial Planner CFP®",
     tags: ["TRUSTED CONSULTANT", "SERVANT LEADER"],
     pic: Jeff,
-    short_bio: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
-    bio: `It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-  
-  Areas of expertise include: Executive Administration | Insurance | Communications`,
+    short_bio: `Jeff  Grimes  has  been  in  the  financial  services  industry  since  2008.  His  initial 
+    career  aspiration  was  to  serve  as  a  full-time  Christian  overseas  missionary.
+    After  struggling  to  raise  support  as  a  recent  college  grad,  he  became  a  financial 
+    advisor  after  learning  more  about  personal  finance.  He  also  saw  the  career  as 
+    another  way  to  help  others.
+    He  has  since  aspired  to  make  sure  that  his  clients  are  educated  and  equipped  so 
+    that  they  are  confident  that  they  can  do  the  work  and  love  the  life  that  God  has 
+    for  them.
+    Jeff  spends  his  time  in  both  Colorado  and  Texas.  He  has  three  kids  in  the  San 
+    Antonio  area.  He  enjoys  traveling,  sports,  and  barbecuing.`,
   },
 ];
