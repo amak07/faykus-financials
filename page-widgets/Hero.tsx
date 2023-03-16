@@ -53,9 +53,7 @@ export const Hero = () => (
           in us.
         </h1>
         <p className="whitespace-pre-line md:hidden block">
-          We help our clients grow their wealth {"\n"} with intention, and
-          magnify their gifts, {"\n"} talents and resources to impact the {"\n"}{" "}
-          mission they are called to serve.
+          Fractional family office, holistic, transformative, disruption
         </p>
       </div>
     </div>
@@ -76,7 +74,7 @@ export const Hero = () => (
             "Positivity & fun",
           ].map((value) => (
             <div
-              className="p-0 md:p-2 sm:w-1/2 w-full flex justify-around"
+              className="p-0 md:p-2 sm:w-1/2 w-full flex md:justify-around justify-start"
               key={value}
             >
               <div className="rounded flex p-4 items-center">

@@ -1,6 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
 import { services } from "../data/services-data";
+import ReadMoreLink from "../components/read-more-link";
 
 const Services = () => (
   <section>
@@ -36,26 +36,12 @@ const Services = () => (
               />
             </div>
             <div className="flex-grow">
-              <h4 className="mt-0 md:mt-11">{service.title}</h4>
-              <p className="text-center md:text-left mx-2">{service.desc}</p>
-              <div className="text-center md:text-left">
-                <Link
-                  href={service.readMoreHref}
-                  className="mt-2 text-sun-yellow inline-flex items-center uppercase no-underline"
-                >
-                  Read More
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-4 h-4 ml-2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </Link>
+              <h4 className="mt-0 md:mt-11 md:text-left text-center">
+                {service.title}
+              </h4>
+              <p className="text-left">{service.desc}</p>
+              <div className="md:text-left text-center">
+                <ReadMoreLink href={service.readMoreHref}></ReadMoreLink>
               </div>
             </div>
           </div>
